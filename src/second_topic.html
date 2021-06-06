@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JsLearn</title>
+  <meta charset="UTF-8" >
+  <link rel="shortcut icon" href="images/html-icon.png" type="image/x-icon">
+   <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="css/thmes_style.css" />
+</head> 
+<body>
+  <header class="header">
+    <a href="index.html">
+      <div class="header-logo">
+        <img src="images/javascript-logo.png" alt="logo" />
+      </div>
+    </a>
+    <a href="index.html">
+      <h1>LearnJs</h1 >
+    </a>
+  </header>
+
+
+
+  <div class="theory-form" id="first-theme-form">
+    <span class="close"></span>
+    <div class="theory-form__content">
+
+    <h2>HTML первые шаги </h2><br/>
+     <p></p>
+
+    <h3>Структура страницы</h3>
+    <pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
+  </tr>
+    <tr>
+    <td>5</td>
+    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>7</td>
+    <td> Содержимое страницы</td>
+  </tr>
+    <tr>
+    <td>8</td>
+    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+</table>
+</pre>
+     <p>Первый тег, который мы встречаем после доктайпа, это &lt<span class="code-example__tag">html</span>&gt.
+    Итак, разметка документа начинается с тега &lt<span class="code-example__tag">html</span>&gt и заканчивается закрывающим тегом&lt/<span class="code-example__tag">html</span>&gt.
+    Каждый тег, который содержит в себе другие теги или элементы должен закрываться закрывающим тегом. Например,&lt<span class="code-example__tag">html</span>&gt&lt<span class="code-example__tag">/html</span>&gt,
+    &lt<span class="code-example__tag">p</span>&gt&lt<span class="code-example__tag">/p</span>&gt,
+    &lt<span class="code-example__tag">div</span>&gt&lt<span class="code-example__tag">/div</span>&gt, и т. д.</p>
+
+    <h4>HTML теги бывают 2 типов:</h4>
+    <pre class="examples">
+
+    </pre>
+
+
+
+    </div>
+
+    <span class="navigation-buttons">
+      <a href="#" class="closeForm navigation" >Закрыть</a>
+      <a href="#second-theme-form" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+
+<!--2 форма-->
+
+  <div class="theory-form" id="second-theme-form">
+    <span class="close"></span>
+    <h2>Подключение файлов</h2><br/>
+    <pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>  &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td> &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>  &lt<span class="code-example__tag">script</span> <span class="code-example__attribute">src</span>=<span class="code-example__quotes">"script.js"</span> <span class="code-example__attribute">type</span>=<span class="code-example__quotes">"text/javascript"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>10</td>
+    <td> Содержимое страницы</td>
+  </tr>
+    <tr>
+    <td>11</td>
+    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>12</td>
+    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+</table>
+</pre>
+
+<h4>Фавиконка (favicon)</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt
+    </pre>
+
+<p>Подключает к документу файл с изображением фавиконки.<br> 
+<b>Фавиконка (favicon)</b> - миниатюрный значок, отображаемый рядом с названием документа во вкладке браузера.
+Фавиконка - это графический файл, размером 16 x 16 (или 32 x 32) пикселей, который может иметь различные форматы, такие, как png, jpg, ico, gif.
+Традиционно используется формат ico. Анимированные фавиконки - это gif файлы, содержащие анимацию. Наблюдать анимированный фавикон можно, например,
+ВКонтакте, когда приходит новое сообщение.</p>
+
+<h4>Css стили (favicon)</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
+    </pre>
+
+<p>Подключает к документу CSS файл со стилями оформления HTML.<br>
+
+<b>CSS</b> - каскадные стили оформления HTML документа. У каждого тега, который находится в теге <body>, имеется набор свойств, такие как - цвет, ширина, высота, положение относительно других элементов. Все эти свойства и есть стили CSS, которые можно вынести во внешний файл.
+Конструкция &ltlink&gt подключает внешние файлы к документу HTML, в том числе и стили CSS.</p>
+<p>Примечание: свойство <b>href</b> конструкции &ltlink&gt указывает расположение внешнего файла.
+В нашем примере, файл style.css и favicon.ico, находятся в той-же папке, что и файл index.html. &ltlink&gt не имеет закрывающего тега.</p>
+
+<h4>Тег &ltscript&gt</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
+    </pre>
+
+<p>Тег &ltscript&gt содержит код или ссылку на файл javaScript и чаще всего используется внутри тега &lthead&gt,
+ хотя <a href="https://developers.google.com/speed/pagespeed/insights/">инструмент оптимизации скорости загрузки страниц от Google</a>, рекомендует данный тег использовать в конце документа, перед закрывающим тегом &lt/body&gt.</p>
+
+<p>В нашем примере подключается внешний файл script.js, который находится в той-же папке, что и основной файл index.html.</p>
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+  <div class="container-main" id="main-content">
+  <div class="intro">
+    <div class="intro-container">
+      <div>
+      <div class="intro-arcticle">
+      <div class="intro-info">
+        <h3 class="intro-info__title">
+          JavaScript<br />
+        </h3>
+        <div class="intro-info__subtitle">
+         <p>JavaScript является преимущественно клиентским языком, обычно использующимся для работы на стороне клиента. С его помощью можно разрабатывать приложения с самым разнообразным функционалом. Это может быть: аналог механических часов, различная анимация, графические эффекты и многое другое. Ничего не мешает создать практически все веб-приложение на JS.</p>
+        </div>
+      </div>
+      <span class="intro__images"
+        ><img src="images/main.png" width="500" height="300" alt="web"
+      /></span>
+    </div>
+      <br>  
+      <p> Для создания кода на JS нужно всего лишь текстовый редактор и браузер, в котором можно тестировать результат.<br> Несколько хороших редакторов:Atom, Visual Studio Code, Sublime Text</p>
+    <p>Данная часть учебника расскажит вам про основы языка JavaScript</p>
+      <div class="list-of-topics">
+        <h3>Выбор темы</h3>
+    <ol class="rounded">
+      <li><a href="#" id="first-html-theme">Знакомство с Js</a></li>
+      <li><a href="#" id="second-html-theme">Простые примеры</a></li>
+      <li><a href="#">Функции</a></li>
+      <li><a href="#">OnClick-события</a></li>
+    </ol>
+  </div>
+  </div>
+
+    </div>
+
+  </div> <!-- /intro -->
+
+</div>
+  <div class="anchor">
+    <a href="#"  onclick="return false">
+      <img class="anchor__img" src="images/upArrow.png" width="100" height="100" alt="наверх" />
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p>
+          <strong>LearnJs</strong> 
+        </p>  
+        <span class="footer-info__copyright">©2021LearnJS</span>
+      </div>
+      <div class="footer-lists">
+        <div class="footer-lists-links">
+          <a href="#">
+            <ul class="footer-list">
+              <li class="footer-lists-links__item">LearnJS</li>
+              <li class="footer-lists-links__item">FAQ</li>
+              <li class="footer-lists-links__item">Tutorials</li>
+              <li class="footer-lists-links__item">About Us</li>
+              <li class="footer-lists-links__item">Privacy Policy</li>
+              <li class="footer-lists-links__item"></li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="./js/script.js"></script>
+<script src="./js/buttons.js"></script>
+</body>
+</html>

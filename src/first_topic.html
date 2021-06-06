@@ -1,97 +1,717 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HTML</title>
+  <title>HtmlLearn</title>
+  <meta charset="UTF-8" >
+  <link rel="shortcut icon" href="images/html-icon.png" type="image/x-icon">
    <link rel="stylesheet" href="css/style.css" />
    <link rel="stylesheet" href="css/thmes_style.css" />
 </head> 
 <body>
-   <header class="header">
+  <header class="header">
     <a href="index.html">
       <div class="header-logo">
-        <img src="images/javascript-logo.png" alt="logo" />
+        <img src="images/icon-html.png" width="75" height="65" alt="logo" />
       </div>
-       </a>
-       <a href="index.html">
-      <h1>LearnJs</h1 ></a>
+    </a>
+    <a href="index.html">
+      <h1>WebLearn</h1 >
+    </a>
+  </header>
 
-    </header>
-    <div class="intro">
-      <div class="intro-container">
-        <div class="intro-info">
-          <h3 class="intro-info__title">
-           HTML/CSS <br />
-          </h3>
-          <div class="intro-info__subtitle">
-            HTML/CSS.<br>
-          </div>
 
-        </div>
-        <span class="intro__images"
-          ><img src="images/main.png" alt="logo"
-        /></span>
-      </div>
-    </div> <!-- /intro -->
+<!--1 форма-->
+  <div class="theory-form" id="first-theme-form">
+    <span class="close"></span>
+    <div class="theory-form__content">
 
-    <div class="first-theme-form">
-      <h2>HTML первые шаги </h2><br/> 
-      HTML теги бывают 2 типов:<br>
-      <div class="examples">
-        <название_тега>  < /название_тега><br> <название_тега /> 
-      </div>
-      Атрибуты тегов
-      <div class="examples">
-        <название_тега название_атрибута="значение"></название_тега>
-        <название_тега название_атрибута="значение" />
-      </div>
+    <h2>I. HTML первые шаги </h2><br/>
+     <p>Код HTML складывается из кирпичиков, которые именуются тегами.
+     Каждый тег имеет свою функцию, а изучение языка разметки HTML, в конечном счете, заключается именно в изучении тегов и их свойств в документе.</p>
 
-      Структура страницы
-<div class="examples">
-      <!DOCTYPE html> 
-      <html><head>
- 
-      </head>
-      <body>
- 
-      </body></html>
-      </div>
+    <h3>Структура страницы</h3>
+    <pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
+  </tr>
+    <tr>
+    <td>5</td>
+    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>7</td>
+    <td> Содержимое страницы</td>
+  </tr>
+    <tr>
+    <td>8</td>
+    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+</table>
+</pre>
+     <p>Первый тег, который мы встречаем после доктайпа, это &lt<span class="code-example__tag">html</span>&gt.
+    Итак, разметка документа начинается с тега &lt<span class="code-example__tag">html</span>&gt и заканчивается закрывающим тегом&lt/<span class="code-example__tag">html</span>&gt.
+    Каждый тег, который содержит в себе другие теги или элементы должен закрываться закрывающим тегом. Например,&lt<span class="code-example__tag">html</span>&gt&lt<span class="code-example__tag">/html</span>&gt,
+    &lt<span class="code-example__tag">p</span>&gt&lt<span class="code-example__tag">/p</span>&gt,
+    &lt<span class="code-example__tag">div</span>&gt&lt<span class="code-example__tag">/div</span>&gt, и т. д.</p>
+
+    <h4>HTML теги бывают 2 типов:</h4>
+    <pre class="examples">
+  <название_тега>  &lt/название_тега>
+  <название_тега/> 
+    </pre>
+
+    <p>Между тегами 
+    &lt<span class="code-example__tag">head</span>&gt
+    и &lt<span class="code-example__tag">/head</span>&gt 
+    находится необходимая информация о странице, а также подключаются CSS-стили и в некоторых случаях скрипты.<br>
+    Между &lt<span class="code-example__tag">body</span>&gt и &lt<span class="code-example__tag">/body</span>&gt
+    уже само содержание страницы.</p>
+    <p>Тег &lt<span class="code-example__tag">head</span>&gt предназначен для хранения метаинформации HTML документа, то есть информации, которая не отображается в самом документе,
+    <br>но является важной и во многом определяет, как документ будет выглядеть и как себя вести.
+    Данный тег обязателен в документе.</p>
+    <h4>Тег &lttitle&gt - заголовок документа</h4>
+   <pre class="examples" id="example-structure">
+    <<span class="code-example__tag">title</span>>  &lt/<span class="code-example__tag">title</span>>
+    </pre>
+   <p>Тег &lttitle&gt  является обязательным, в нем задается заголовок страницы,который отображается во вкладках браузера:</p>
+   <pre class="examples" id="example-structure">
+<<span class="code-example__tag">head</span>>
+  <<span class="code-example__tag">title</span>&gt HtmlLearn &lt/<span class="code-example__tag">title</span>>
+&lt/<span class="code-example__tag">head</span>>
+    </pre>
+    <img src="images/example-title.png" alt="тут должен быть пример" />
     </div>
 
+    <span class="navigation-buttons">
+      <a href="#" class="closeForm navigation" >Закрыть</a>
+      <a href="#second-theme-form" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
 
-  <div class="list-of-topics">
-      <ol class="rounded">
-      <li><a href="#">Элемент списка</a></li>
-      <li><a href="#">Элемент списка</a></li>
-      <li><a href="#">Элемент списка</a></li>
-      <li><a href="#">Элемент списка</a></li>
-      <li><a href="#">Элемент списка</a></li>
+
+
+<!--2 форма-->
+
+  <div class="theory-form" id="second-theme-form">
+    <span class="close"></span>
+    <h2>II. Подключение файлов</h2><br/>
+    <pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>  &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td> &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>  &lt<span class="code-example__tag">script</span> <span class="code-example__attribute">src</span>=<span class="code-example__quotes">"script.js"</span> <span class="code-example__attribute">type</span>=<span class="code-example__quotes">"text/javascript"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>10</td>
+    <td> Содержимое страницы</td>
+  </tr>
+    <tr>
+    <td>11</td>
+    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>12</td>
+    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+</table>
+</pre>
+
+<h4>Фавиконка (favicon)</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt
+    </pre>
+
+<p>Подключает к документу файл с изображением фавиконки.<br> 
+<b>Фавиконка (favicon)</b> - миниатюрный значок, отображаемый рядом с названием документа во вкладке браузера.
+Фавиконка - это графический файл, размером 16 x 16 (или 32 x 32) пикселей, который может иметь различные форматы, такие, как png, jpg, ico, gif.
+Традиционно используется формат ico. Анимированные фавиконки - это gif файлы, содержащие анимацию. Наблюдать анимированный фавикон можно, например,
+ВКонтакте, когда приходит новое сообщение.</p>
+
+<h4>Css стили (favicon)</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
+    </pre>
+
+<p>Подключает к документу CSS файл со стилями оформления HTML.<br>
+
+<b>CSS</b> - каскадные стили оформления HTML документа. У каждого тега, который находится в теге <body>, имеется набор свойств, такие как - цвет, ширина, высота, положение относительно других элементов. Все эти свойства и есть стили CSS, которые можно вынести во внешний файл.
+Конструкция &ltlink&gt подключает внешние файлы к документу HTML, в том числе и стили CSS.</p>
+<p>Примечание: свойство <b>href</b> конструкции &ltlink&gt указывает расположение внешнего файла.
+В нашем примере, файл style.css и favicon.ico, находятся в той-же папке, что и файл index.html. &ltlink&gt не имеет закрывающего тега.</p>
+
+<h4>Тег &ltscript&gt</h4>
+
+    <pre class="examples">
+&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
+    </pre>
+
+<p>Тег &ltscript&gt содержит код или ссылку на файл javaScript и чаще всего используется внутри тега &lthead&gt,
+ хотя <a href="https://developers.google.com/speed/pagespeed/insights/">инструмент оптимизации скорости загрузки страниц от Google</a>, рекомендует данный тег использовать в конце документа, перед закрывающим тегом &lt/body&gt.</p>
+
+<p>В нашем примере подключается внешний файл script.js, который находится в той-же папке, что и основной файл index.html.</p>
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+
+
+
+
+  <!--3 форма-->
+
+  <div class="theory-form" id="third-theme-form">
+    <span class="close"></span>
+    <h2>III.Самыe популярные теги html</h2><br/>
+    <h3>1. Заголовки</h3>
+    <p>&lt<span class="code-example__tag">h1</span>&gt…&lt<span class="code-example__tag">h6</span>&gt – теги-заголовки с первого по шестой уровень.</p>
+    <p>Тег &lt<span class="code-example__tag">h1</span>&gt наиболее важный заголовок (его ещё называют – заголовок первого уровня).
+     Текст такого заголовка будет самым большим. Соответственно, тег &lt<span class="code-example__tag">h6</span>&gt –  наименее важный заголовок. Текст такого заголовка будет самым маленьким.<br>
+     Теги &lt<span class="code-example__tag">h1</span>&gt-&lt<span class="code-example__tag">h6</span>&gt - парные,то есть они обязательно должны закрываться.<br>
+     Заголовки – это блочные элементы, но в себе не могут содержать иные блочные элементы. Они могут содержать внутри себя лишь текст и/или строчные элементы. Добавляет пустой отступ перед и после себя.
+      Заголовки первого и второго уровня очень важны для поисковых систем.</p>
+      <h4>Пример</h4>
+      <table class="code-example">
+        <tr>
+          <td>1</td>
+          <td>&lt<span class="code-example__tag">h2</span>&gt Самыe популярные теги html &lt/<span class="code-example__tag">h2</span>&gt</td>
+        </tr>
+         <tr>
+               <td>2</td>
+         <td></td>
+       </tr>
+          <tr>
+         <td>3</td>
+         <td>&lt<span class="code-example__tag">h3</span>&gt Заголовки      &lt/<span class="code-example__tag">h3</span>&gt</td>
+       </tr>
+       <tr>
+      </table>
+
+    <h3>2. Параграф/текстовый абзац</h3>
+    <p>Тег &lt<span class="code-example__tag">p</span>&gt представляет собой абзац. Абзацы обычно представлены в визуальной среде в виде блоков текста, отделённых от соседних блоков пустыми строками и/или отступом в первой строке,
+     кроме этого HTML-абзацы могут представлять собой структурную группировку однотипного содержимого, например изображений или полей формы.</p>
+      <h4>Пример</h4>
+          <pre class="examples">
+&lt<span class="code-example__tag">p</span>&gt Какой-то текст &lt/<span class="code-example__tag">p</span>&gt
+    </pre>
+
+    <p>Тег &lt<span class="code-example__tag">p</span>&gt – это блочный элемент. Он начинается с новой строки. Не может иметь внутри себя другие блочные элементы. Добавляет пустой отступ перед и после себя.
+     Закрывающийся тег необязателен. Если не указывать закрывающийся тег, то считается, что конец абзаца совпадает с началом следующего блочного элемента.</p>
+
+     <h3>3. Перевод строки</h3>
+    <p>При написании любого текста в HTML, он будет идти в одну строку до следующих заголовков или специальных тегов.<br>
+      Тег &lt<span class="code-example__tag">br</span>&gt- перевод строки ниже. Данный тег является одиночным, поэтому ему не нужен парный-закрывающий тег.
+    </p>
+  <h3>4. Теги форматирования текста</h3>
+  <pre class="examples">
+  &lt<span class="code-example__tag">b</span>&gt <b>Текст выделяется жирным</b> &lt/<span class="code-example__tag">b</span>&gt
+  </pre>
+
+  <pre class="examples">
+  &lt<span class="code-example__tag">em</span>&gt <em>Наклонный текст</em> &lt/<span class="code-example__tag">em</span>&gt
+  </pre>
+
+  <pre class="examples">
+  &lt<span class="code-example__tag">u</span>&gt <u>Подчеркнутый  текст</u> &lt/<span class="code-example__tag">u</span>&gt
+  </pre>
+
+  <pre class="examples">
+  &lt<span class="code-example__tag">sup</span>&gt <sup>Верхний индек</sup> &lt/<span class="code-example__tag">sup</span>&gt
+  </pre>
+
+   <pre class="examples">
+  &lt<span class="code-example__tag">sub</span>&gt <sub>Нижний индек</sub> &lt/<span class="code-example__tag">sub</span>&gt
+  </pre>
+
+  <pre class="examples">
+  &lt<span class="code-example__tag">ins</span>&gt <ins>Вставленный фрагмент текста</ins> &lt/<span class="code-example__tag">ins</span>&gt
+  </pre>
+
+   <pre class="examples">
+  &lt<span class="code-example__tag">del</span>&gt <del>Удалённый фрагмент текста</del> &lt/<span class="code-example__tag">del</span>&gt
+  </pre>
+
+   <pre class="examples">
+  &lt<span class="code-example__tag">pre</span>&gt Отформатированный 
+  текст &lt/<span class="code-example__tag">pre</span>&gt( Текст отображается так, как напечатан).
+  </pre>
+
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+
+
+
+  <!--4 форма-->
+
+  <div class="theory-form" id="fourth-theme-form">
+    <span class="close"></span>
+    <h2>IV. Таблицы и списки</h2><br/>
+    <h3 id="table-example-link">1. Таблицы</h3>
+    <p>Таблица создаётся при помощи нескольких тегов, главный из них это элемента &lt<span class="code-example__tag">table</span>  &gt&lt/<span class="code-example__tag">table</span>&gt, 
+    который является контейнером для элементов таблицы и все элементы должны находиться внутри него.<br>
+    Строки или ряды таблицы создаются с помощью элемента &lt<span class="code-example__tag">tr</span>&gt Количество горизонтальных строк таблицы определяется количеством элементов 
+      &lt<span class="code-example__tag">tr</span>&gt &lt/<span class="code-example__tag">tr</span>&gt.<br>
+    Следущий тег это &lt<span class="code-example__tag">th</span>&gt, он создаёт заголовок столбца — специальную ячейку, текст в которой выделяется полужирным.
+     Количество ячеек заголовка определяется количеством элементов  &lt<span class="code-example__tag">th</span>&gt &lt/<span class="code-example__tag">th</span>&gt.<br>
+    Дальше идет тег &lt<span class="code-example__tag">td</span>&gt  он определяет ячейку таблицы которая содержит данные.
+    Элементы &lt<span class="code-example__tag">td</span>&gt &lt/<span class="code-example__tag">td</span>&gt в одном ряду, определяют количество ячеек в строке таблицы.
+    Количество пар ячеек &lt<span class="code-example__tag">td</span>&gt должно быть равно количеству пар ячеек &lt<span class="code-example__tag">th</span>&gt.
+  </p>
+  <p>По умолчанию таблица и ячейки не имеют видимых границ. Границы задаются с помощью свойства border</p>
+  <h4>Пример</h4>
+  <pre class="code-wrapper">
+<table class="code-example" >
+  <tr>
+    <td>1</td>
+    <td>&lt<span class="code-example__tag">table</span>&gt</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>  &lt<span class="code-example__tag">th</span>&gt  Заголовок таблицы &lt/<span class="code-example__tag">th</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">tr</span>&gt</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">td</span>&gt Ячейка 1.1 &lt/<span class="code-example__tag">td</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>    &lt<span class="code-example__tag">td</span>&gt Ячейка 1.2 &lt/<span class="code-example__tag">td</span>&gt</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>  &lt<span class="code-example__tag">tr</span>&gt</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>  &lt<span class="code-example__tag">tr</span>&gt</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>    &lt<span class="code-example__tag">td</span>&gt Ячейка 2.1 &lt/<span class="code-example__tag">td</span>&gt</td>
+  </tr>
+   <tr>
+    <td>9</td>
+    <td>    &lt<span class="code-example__tag">td</span>&gt Ячейка 2.2 &lt/<span class="code-example__tag">td</span>&gt</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>  &lt<span class="code-example__tag">tr</span>&gt</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>&lt/<span class="code-example__tag">table</span>&gt</td>
+  </tr>
+</table>
+</pre>
+
+  <h3 id="bulleted-list-example-link">2. Маркиркированные списки</h3>
+  <p>Маркированный или неупорядоченный список — это просто список связанных элементов, для которых порядок не имеет значения.
+   Создание маркированного списка в HTML осуществляется с помощью блочного элемента списка
+    &lt<span class="code-example__tag">ul</span>&gt. 
+    Каждый отдельный пункт в списке размечается с помощью элемента
+    &lt<span class="code-example__tag">li</span>&gt.
+</p>
+  <h4>Пример</h4>
+<pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt<span class="code-example__tag">ul</span>&gt</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Таблицы &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Списки &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Ссылки &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>&lt<span class="code-example__tag">ul</span>&gt </td>
+  </tr>
+</table>
+</pre>
+
+<div class="examples">
+  <ul>   
+    <li>Таблицы</li>
+    <li>Списки</li>
+    <li>Ссылки</li>
+  </ul>
+</div>
+
+  <h3 id="numbered-list-example-link">3. Нумерованный списки</h3>
+  <p>Нумерованный или упорядоченный список элементов &lt<span class="code-example__tag">ol</span>&gt.  очень похож на маркированный список, отдельные пункты списка создаются таким же образом.
+   Основным различием между списками является то, что для упорядоченного списка важен порядок представления пунктов.
+
+</p>
+  <h4>Пример</h4>
+<pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt<span class="code-example__tag">ol</span>&gt</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Таблицы &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Списки &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>  &lt<span class="code-example__tag">li</span>&gt Ссылки &lt/<span class="code-example__tag">li</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>&lt<span class="code-example__tag">ol</span>&gt </td>
+  </tr>
+</table>
+</pre>
+
+<div class="examples">
+  <ol>   
+    <li>Таблицы</li>
+    <li>Списки</li>
+    <li>Ссылки</li>
+  </ol>
+</div>
+
+  <h3 id="links-example-link">4. Ссылки</h3>
+  <p>Тег &lt<span class="code-example__tag">a</span>&gt. определяет гиперссылку на место на странице или на другую страницу в Интернете.
+  </p>
+  <p>
+  Для создания ссылки на элемент на странницы, нужно в атрибут href указать название id данного элемента.<br>
+  Для ссылку на другую страницу нужно в атрибут href указать путь или ссылку на страницу.
+  <h4>Пример</h4>
+<pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt<span class="code-example__tag">a</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"#table-example-link"</span>&gt Таблицы &lt/<span class="code-example__tag">a</span>&gt</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">a</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"#bulleted-list-example-link"</span>&gt Маркиркированные списки &lt/<span class="code-example__tag">a</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>&lt<span class="code-example__tag">a</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"#numbered-list-example-link"</span>&gt Нумерованный списки &lt/<span class="code-example__tag">a</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>&lt<span class="code-example__tag">a</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"#links-example-link"</span>&gt Ссылки &lt/<span class="code-example__tag">a</span>&gt</td>
+  </tr>
+<tr>
+    <td>6</td>
+    <td>&lt<span class="code-example__tag">a</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"https://www.google.com"</span>&gt Google &lt/<span class="code-example__tag">a</span>&gt</td>
+  </tr>
+</table>
+</pre>
+
+<pre class="examples">
+  <a href="#table-example-link" class="example-links"> Таблицы </a>
+  <a href="#bulleted-list-example-link" class="example-links">Маркиркированные списки</a>
+  <a href="#numbered-list-example-link" class="example-links">Нумерованный списки</a>
+  <a href="#links-example-link" class="example-links">Ссылки</a>
+  <a href="https://www.google.com" class="example-links">Google</a>
+</pre>
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+<!-- пятая форма -->
+
+    <div class="theory-form" id="fifth-theme-form">
+    <span class="close"></span>
+    <h2>Css свойства</h2><br/>
+    <h3>1. Css свойства</h3>
+     <p>Схема CSS-кода выглядит следующим образом:</p>
+
+<pre class="examples">
+  <span class="code-example__tag">имя-тега</span> {
+    css-свойство:значение;
+  }
+</pre>
+    <p>В этом уроке мы рассмотрим основные CSS-свойства:</p>
+    <ul>
+      <li><a href="">  </a></li>
+      <li><a href="">  </a></li>
+      <li><a href="">  </a></li>
+      <li><a href="">  </a></li>
+    </ul>
+    <h3>Css-свойства влияющие на цвет и фон</h3>
+
+    <p>color: — CSS-свойство влияющее на цвет текста.В качестве его значения выступает имя цвета или шестнацатеричный код в RGB-формате.</p>
+    <h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">color:red;</span> 
+<span class="code-example__tag">color:#008800;</span> 
+<span class="code-example__tag">color: rgb(205, 51, 255);</span> 
+</pre>
+<p>background-color: — CSS-свойство влияющее на цвет фона заголовка, абзаца, ссылки и т.д.</p>
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">background-color:red;</span> 
+<span class="code-example__tag">background-color:#008800;</span> 
+<span class="code-example__tag">background-color: rgb(205, 51, 255);</span> 
+</pre>
+<p>background-image: — CSS-свойство устанавливающее изображение, в качестве фона фона заголовка, абзаца, ссылки и т.д. Его значением выступает URL (адрес) изображения.</p>
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">background-image: url(http://имя домена.ru/kartinka.jpg);</span> 
+</pre>
+<h3>CSS-свойства влияющие на шрифт</h3>
+<p>font-size: — CSS-свойство влияющее на размер шрифта текста. В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
+
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">font-size: 17px;</span>
+</pre>
+<p>font-family: — CSS-свойство устанавливающее имя шрифта для заголовка, абзаца, ссылки и т.д. 
+В качестве его значения выступает имя шрифта: Arial, Courier, Impact, Garamond, Georgia, Helvetica, Tahoma, Times (установлен по-умочанию), Verdana и т.д.</p>
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">font-family: Arial;</span>
+</pre>
+
+<h3>CSS-свойства влияющие на текст</h3>
+<p>text-align: — CSS-свойство влияющее на выравнивание текста в заголовке, абзаце и других блочных элементах. В качестве его значения выступает: left, center, right, justify.</p>
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">text-align: left;</span>
+</pre>
+
+<p>text-indent: — CSS-свойство влияющее на отступ первой строки (красная строка) текста в закаловке, абзаце и других блочных элементах. 
+В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д</p>
+
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">text-indent: 20px;</span>
+</pre>
+
+<p>line-height: — CSS-свойство влияющее на расстояние между строками текста (интерлиньяж) заголовка, абзаца, ссылки и т.д. В качестве его значения выступает единица измерения: множитель, пиксель (px), процент (%), пункт (pt) и т.д.</p>
+
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">line-height: 35px;</span>
+</pre>
+
+<h3>CSS-свойства влияющие на внешние и внутренние отступы</h3>
+
+<p>margin: — CSS-свойство влияющее на отступ между краем фона одного блочного элемента (заголовки, абзацы и т.д.) и краем фона другого блочного элемента.
+  Так же можно устанавливать оступы с определенной стороны прописав ее через тере margin-top:
+ В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
+
+<h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">margin: 15px;</span>
+<span class="code-example__tag">margin-left: 25px;</span>
+</pre>
+
+<p>padding: — CSS-свойство влияющее на отступ между краем фона элемента и его содержимым (текстом, изображением).
+ В качестве его значения выступаюет единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
+
+ <h4>Пример</h4>
+<pre class="examples">
+<span class="code-example__tag">padding: 15px;</span>
+<span class="code-example__tag">padding-left: 25px;</span>
+</pre>
+
+
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+  <div class="theory-form" id="sixth-theme-form">
+    <span class="close"></span>
+    <h2>Блочная верстка</h2><br/>
+
+    <p>
+    Как правило, веб-страница состоит из множества различных элементов, которые могут иметь сложную структуру.
+    Поэтому при создании веб-страницы возникает необходимость нужным образом позиционировать эти элементы, стилизовать их так, чтобы они располагались на странице нужным образом. 
+    То есть возникает вопрос создания макета страницы, ее верстки.</p>
+    <p>Существуют различные способы, стратегии и виды верстки.
+     Изначально распространенной была верстка на основе таблиц.
+     Так как таблицы позволяет при необходимости очень легко и просто разделить вcе пространство веб-страницы на строки и столбцы.
+     Строками и столбцами довольно легко управлять, в них легко позиционировать любое содержимое.
+     Именно это и определило популярность табличной верстки.</p>
+     <p>Однако табличная верстка создает не самые гибкие по дизайну страницы, что является особенно актуальным аспектом в мире,
+      где нет одного единственного разрешения экрана, за то есть большие экраны на телевизорах,
+      малые экраны на планшетах и фаблетах, очень маленькие экраны на смартфонах и т.д.
+      Все это многообразие экранов табличная верстка оказалась не в состоянии удовлетворить.
+      Поэтому постепенно ей на смену пришла блочная верстка.
+      Блочная верстка - это отосительно условное название способов и приемов верстки, когда в большинстве веб-страниц для разметки используется CSS-свойства,
+      а основным строительным элементов веб-страниц является элемент &lt<span class="code-example__tag">div</span>&gt, то есть по сути блок.
+      Используя свойства и элементы div или другие элементы, можно создать структуру страницы из нескольких столбцов, как при табличной верстке, которая будет значительно гибче.</p>
+      <p>Тег &lt<span class="code-example__tag">div</span>&gt является универсальным контейнером для потокового контента. Он не влияет на контент или макет до тех пор, пока не будет стилизован с помощью CSS.</p>
+      <p>Глобальный атрибут <span class="code-example__attribute">class</span> это разделённый пробелом список регистров зависимых классов элемента.
+       Классы позволяют CSS и Javascript выбирать и получать доступ с помощью селекторов класса или функций, таких как методы DOM document.getElementsByClassName.<br>
+       Глобальный атрибут <span class="code-example__attribute">id</span> устанавливает элементу уникальный идентификатор (ID), имя которого должно быть уникальным в документе (на странице). 
+     </p>
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
+
+
+  <div class="container-main" id="main-content">
+  <div class="intro">
+    <div class="intro-container">
+      <div>
+      <div class="intro-arcticle">
+      <div class="intro-info">
+        <h3 class="intro-info__title">
+          Web-ДИЗАЙН <br />
+        </h3>
+        <div class="intro-info__subtitle">
+         <p> Web-ДИЗАЙН – это актуальная, современная профессия, которая позволяет творчески развиваться, креативно мыслить, наполнять свою жизнь яркими красками и работать над собой. 
+Веб-дизайн достаточно непростая и сложная область. Вы должны быть готовы к тому, что это колоссальная работа, которая требует очень много времени.
+Но знания, которые вы получите, пригодятся вам в различных  ситуациях и сферах жизни, а это отличная возможность для самореализации и карьерного роста..</p>
+        </div>
+      </div>
+      <span class="intro__images"
+        ><img src="images/webDesign.png" width="500" height="300" alt="web"
+      /></span>
+    </div>
+    <p>Веб-дизайн включает в себя несколько направлений, которые сами по себе являются самодостаточными. Объединение этих направление и является «веб-дизайном». Сюда включаются: графический интерфейс, который мы видим, открыв сайт; проектирование навигационной системы сайта; контент-проект ресурса, то есть информационное содержимое сайта, учитывающееся при его разработке. К веб-дизайну относится и пресловутое «юзабилити» (от английского usability), то есть удобство пользование сайтом, простоту и понятность интерфейса и навигации на сайте и т.д.
+    <br> Кстати, термину юзабилити так до сих пор и не подобран адекватный русский перевод.</p>
+    <p>Данная часть учебника расскажит вам про основы верстки</p>
+      <div class="list-of-topics">
+        <h3>Выбор темы</h3>
+    <ol class="rounded">
+      <li><a href="#" id="first-html-theme">Знакомство с HTML</a></li>
+      <li><a href="#" id="second-html-theme">Подлкючение файлов</a></li>
+      <li><a href="#" id="third-html-theme">Больше тегов</a></li>
+      <li><a href="#" id="fourth-html-theme">Таблицы и списки</a></li>
+      <li><a href="#" id="fifth-html-theme">Блочная верстка</a></li>
     </ol>
+  </div>
+  </div>
+    </div>
+
+  </div> <!-- /intro -->
+
+</div>
+  <div class="anchor">
+    <a href="#"  onclick="return false">
+      <img class="anchor__img" src="images/upArrow.png" width="100" height="100" alt="наверх" />
+    </a>
   </div>
 
   <footer>
-      <div class="footer-container">
-        <div class="footer-info">
-          <p>
-            <strong>LearnJs</strong> 
-          </p>  
-          <span class="footer-info__copyright">©2021LearnJS</span>
-        </div>
-        <div class="footer-lists">
-          <div class="footer-lists-links">
-            <a href="#">
-              <ul class="footer-list">
-                <li class="footer-lists-links__item">LearnJS</li>
-                <li class="footer-lists-links__item">FAQ</li>
-                <li class="footer-lists-links__item">Tutorials</li>
-                <li class="footer-lists-links__item">About Us</li>
-                <li class="footer-lists-links__item">Privacy Policy</li>
-                <li class="footer-lists-links__item"></li>
-              </ul>
-            </a>
-          </div>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p>
+          <strong>LearnJs</strong> 
+        </p>  
+        <span class="footer-info__copyright">©2021LearnJS</span>
+      </div>
+      <div class="footer-lists">
+        <div class="footer-lists-links">
+          <a href="#">
+            <ul class="footer-list">
+              <li class="footer-lists-links__item">LearnJS</li>
+              <li class="footer-lists-links__item">FAQ</li>
+              <li class="footer-lists-links__item">Tutorials</li>
+              <li class="footer-lists-links__item">About Us</li>
+              <li class="footer-lists-links__item">Privacy Policy</li>
+              <li class="footer-lists-links__item"></li>
+            </ul>
+          </a>
         </div>
       </div>
-    </footer>
-
+    </div>
+  </footer>
+<script src="./js/script.js"></script>
+<script src="./js/buttons.js"></script>
 </body>
 </html>
