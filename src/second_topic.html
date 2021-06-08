@@ -20,69 +20,148 @@
   </header>
 
 
-
+<!--1 форма-->
   <div class="theory-form" id="first-theme-form">
     <span class="close"></span>
-    <div class="theory-form__content">
-
-    <h2>HTML первые шаги </h2><br/>
-     <p></p>
-
-    <h3>Структура страницы</h3>
-    <pre class="code-wrapper">
+    <h2>Начало</h2>
+    <p>Для запуска кода js вам нужен только файл html в котором прописан путь к вашему скрипту и браузер который запустит этут html страничку.</p>
+    <h3>Hello World!!</h3>
+    <p>Давайте запишем в переменную строку: Hello World! и выведем ее на экран.</p>
 <table class="code-example">
   <tr>
     <td>1</td>
-    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+    <td> <span class="code-example__variable">let</span> firstString=<span class="code-example__quotes">"Hello World!"</span>;</td>
   </tr>
     <tr>
     <td>2</td>
-    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+    <td><span class="code-example__tag">alert</span>(firstString);</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__HelloWorld">Запустить</a>
+</table>
+<a href="https://plnkr.co/edit/K5sOvhWRzYwxVBpc?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть пример</a>
+
+
+<h3>Переменные</h3>
+<p>Переменная – это «именованное хранилище» для данных. Мы можем использовать переменные для хранения товаров, посетителей и других данных.
+Для создания переменной в JavaScript используйте ключевое слово let</p>
+<p>После создания можно поместить в нее данные, с помощью оператора присваивания =.</p>
+<p>Переменные можно обьявлять в 1 строку, но для лучшей читемости следует объявляйте каждую переменную на новой строке.</p>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">let</span> name=<span class="code-example__quotes">"Alex"</span>;</td>
   </tr>
     <tr>
-    <td>3</td>
-    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
-  </tr>
-    <tr>
-    <td>4</td>
-    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
-  </tr>
-    <tr>
-    <td>5</td>
-    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
-  </tr>
-    <tr>
-    <td>6</td>
-    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
-  </tr>
-    <tr>
-    <td>7</td>
-    <td> Содержимое страницы</td>
-  </tr>
-    <tr>
-    <td>8</td>
-    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
-  </tr>
-    <tr>
-    <td>9</td>
-    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+    <td>2</td>
+    <td><span class="code-example__variable">let</span> age=20;</td>
   </tr>
 </table>
-</pre>
-     <p>Первый тег, который мы встречаем после доктайпа, это &lt<span class="code-example__tag">html</span>&gt.
-    Итак, разметка документа начинается с тега &lt<span class="code-example__tag">html</span>&gt и заканчивается закрывающим тегом&lt/<span class="code-example__tag">html</span>&gt.
-    Каждый тег, который содержит в себе другие теги или элементы должен закрываться закрывающим тегом. Например,&lt<span class="code-example__tag">html</span>&gt&lt<span class="code-example__tag">/html</span>&gt,
-    &lt<span class="code-example__tag">p</span>&gt&lt<span class="code-example__tag">/p</span>&gt,
-    &lt<span class="code-example__tag">div</span>&gt&lt<span class="code-example__tag">/div</span>&gt, и т. д.</p>
 
-    <h4>HTML теги бывают 2 типов:</h4>
-    <pre class="examples">
+<p>В старых скриптах вы также можете найти другое ключевое слово: var вместо let:</p>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">var</span> firstString=<span class="code-example__quotes">"Hello World!"</span>;</td>
+  </tr>
+</table>
+<p>Ключевое слово var – почти то же самое, что и let. Оно объявляет переменную, но немного по-другому, «устаревшим» способом.
 
-    </pre>
+Есть тонкие различия между let и var, но они пока не имеют для нас значения.</p>
 
+<h3>Константы</h3>
 
+<p>Чтобы объявить константную, то есть, неизменяемую переменную, используйте const вместо let:</p>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">const</span> pi=3,141;</td>
+  </tr>
+</table>
+<p>Переменные, объявленные с помощью const, называются «константами». Их нельзя изменить. Попытка сделать это приведёт к ошибке.</p>
 
-    </div>
+<h3>Типы данных</h3>
+
+<h4>Число</h4>
+<p>Числовой тип данных (number) представляет как целочисленные значения, так и числа с плавающей точкой.<br>
+Существует множество операций для чисел, например, умножение *, деление /, сложение +, вычитание - и так далее.<br>
+</p>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">let</span> x=1;</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__variable">let</span> y=8;</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">alert</span>(x+y);</td>
+  </tr>
+<a href=""  class="code-wrapper__link-exmple" id="code-example__numbers">Запустить</a>
+</table>
+
+<h4>Строка</h4>
+<P>Строка (string) в JavaScript должна быть заключена в кавычки.</P>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">let</span> str1=<span class="code-example__quotes">"Двойные кавычки."</span>;</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__variable">let</span> str2=<span class="code-example__quotes">'Одинарные кавычки.'</span>;</td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__variable">let</span> str3=<span class="code-example__quotes">`С помощью обратных кавычек можно встраивать переменные. ${str2}`</span>;</td>
+  </tr>
+</table>
+<p>Так же в обратные кавычки можно встраивать выражения</p>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">let</span> world=<span class="code-example__quotes">"мир."</span>;</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__quotes">`Привет</span> ${world}<span class="code-example__quotes">`</span>);</td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__variable">let</span> str3=<span class="code-example__quotes">`Сумма:</span> ${9 + 1}<span class="code-example__quotes">`</span>;</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__string">Запустить</a>
+</table>
+<a href="https://plnkr.co/edit/NabJ9Vy39Ho3evEd?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть пример</a>
+
+<h4>Логический тип</h4>
+
+<p>Логический(булевый) тип (boolean) может принимать только два значения: true (истина) и false (ложь).</p>
+<p>Такой тип, как правило, используется для хранения значений да/нет: true значит «да, правильно», а false значит «нет, не правильно».</p>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__variable">let</span> loginChecked=<span class="code-example__tag">true</span>;</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td> loginChecked=<span class="code-example__tag">false</span>;</td>
+  </tr>
+</table>
+<p>Булевые значения также могут быть результатом сравнений:</p>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">alert</span>(2<3); </td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__bool">Запустить</a>
+</table>
 
     <span class="navigation-buttons">
       <a href="#" class="closeForm navigation" >Закрыть</a>
@@ -90,107 +169,111 @@
     </span>
   </div>
 
-
-
 <!--2 форма-->
 
   <div class="theory-form" id="second-theme-form">
     <span class="close"></span>
-    <h2>Подключение файлов</h2><br/>
-    <pre class="code-wrapper">
+<h3>alert</h4>
+<p>С этой функцией мы уже знакомы. Она показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».</p>
+<p>Это небольшое окно с сообщением называется модальным окном. Понятие модальное означает, что пользователь не может взаимодействовать с интерфейсом остальной части страницы, 
+нажимать на другие кнопки и т.д. до тех пор, пока взаимодействует с окном. В данном случае – пока не будет нажата кнопка «OK».</p>
+
+<h3>prompt</h4>
+
+<p>Функция prompt отображает диалоговое окно с необязательным запросом на ввод текста.</p>
+
 <table class="code-example">
   <tr>
     <td>1</td>
-    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+    <td><span class="code-example__variable">let</span> name= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"Введите имя", "имя"</span>); </td>
   </tr>
     <tr>
     <td>2</td>
-    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Ваше имя"</span>);</td>
   </tr>
-    <tr>
-    <td>3</td>
-    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>  &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td> &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>  &lt<span class="code-example__tag">script</span> <span class="code-example__attribute">src</span>=<span class="code-example__quotes">"script.js"</span> <span class="code-example__attribute">type</span>=<span class="code-example__quotes">"text/javascript"</span>&gt</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
-  </tr>
-    <tr>
-    <td>9</td>
-    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
-  </tr>
-    <tr>
-    <td>10</td>
-    <td> Содержимое страницы</td>
-  </tr>
-    <tr>
-    <td>11</td>
-    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
-  </tr>
-    <tr>
-    <td>12</td>
-    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
-  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__prompt">Запустить</a>
 </table>
-</pre>
 
-<h4>Фавиконка (favicon)</h4>
 
-    <pre class="examples">
-&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"icon"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"favicon.ico"</span>&gt
-    </pre>
+<h3>confirm</h3>
+<p>Функция confirm отображает диалоговое окно, которое содержит две кнопки (OK и Cancel), а так же опциональное (необязательное) текстовое сообщение.</p>
+<p>Результат – true, если нажата кнопка OK. В других случаях – false.</p>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> quest= <span class="code-example__tag">confirm</span>(<span class="code-example__quotes">"Вы изучаете js?"</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">alert</span>(quest);</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__confirm">Запустить</a>
+</table>
 
-<p>Подключает к документу файл с изображением фавиконки.<br> 
-<b>Фавиконка (favicon)</b> - миниатюрный значок, отображаемый рядом с названием документа во вкладке браузера.
-Фавиконка - это графический файл, размером 16 x 16 (или 32 x 32) пикселей, который может иметь различные форматы, такие, как png, jpg, ico, gif.
-Традиционно используется формат ico. Анимированные фавиконки - это gif файлы, содержащие анимацию. Наблюдать анимированный фавикон можно, например,
-ВКонтакте, когда приходит новое сообщение.</p>
+<h3>Операторы сравнения </h3>
+<p>Многие операторы сравнения известны нам из математики.</p>
+<ul>
+  <li>Больше a>b и меньше a&ltb; </li>
+  <li>Больше или равно a>=b и меньше или равно a&ltb=; </li>
+  <li>Равно a==b или a===b, при сравнении с помощью == сравниваются только значения, а с помощью === еще и типы</li>
+  <li>Не равно a!=b или a!==b(тот же принцип как с == и ===)</li>
+</ul>
 
-<h4>Css стили (favicon)</h4>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td> <span class="code-example__tag">alert</span>(5>2);</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">alert</span>(5===5);</td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">alert</span>(5!==5);</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__string">Запустить</a>
+</table>
+<h3>Оператор if</h3>
+<p>Оператор if(...) вычисляет условие в скобках и, если результат true, то выполняет блок кода.</p>
+<p>В нутри оператора if можно использовать все операторы сравнения </p>
+ <h3>Задание</h3>
 
-    <pre class="examples">
-&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
-    </pre>
+  <p>С помощью изученых функций, выведите на экран пример, рещение котрого нужно ввести с клавиатры, и если ответ верный то вывести "Верный ответ" если нет, то "Подумайте еще "</p>
+<a href="" class="code-wrapper__link-exmple" id="code-example__confirm">Перейти коду</a>
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
 
-<p>Подключает к документу CSS файл со стилями оформления HTML.<br>
+  <!--3 форма-->
 
-<b>CSS</b> - каскадные стили оформления HTML документа. У каждого тега, который находится в теге <body>, имеется набор свойств, такие как - цвет, ширина, высота, положение относительно других элементов. Все эти свойства и есть стили CSS, которые можно вынести во внешний файл.
-Конструкция &ltlink&gt подключает внешние файлы к документу HTML, в том числе и стили CSS.</p>
-<p>Примечание: свойство <b>href</b> конструкции &ltlink&gt указывает расположение внешнего файла.
-В нашем примере, файл style.css и favicon.ico, находятся в той-же папке, что и файл index.html. &ltlink&gt не имеет закрывающего тега.</p>
+  <div class="theory-form" id="third-theme-form">
+    <span class="close"></span>
 
-<h4>Тег &ltscript&gt</h4>
 
-    <pre class="examples">
-&lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt
-    </pre>
-
-<p>Тег &ltscript&gt содержит код или ссылку на файл javaScript и чаще всего используется внутри тега &lthead&gt,
- хотя <a href="https://developers.google.com/speed/pagespeed/insights/">инструмент оптимизации скорости загрузки страниц от Google</a>, рекомендует данный тег использовать в конце документа, перед закрывающим тегом &lt/body&gt.</p>
-
-<p>В нашем примере подключается внешний файл script.js, который находится в той-же папке, что и основной файл index.html.</p>
 
     <span class="navigation-buttons">
       <a href="#" class="previous navigation" >&laquo; Назад</a>
       <a href="#" class="next navigation">Вперед &raquo;</a>
     </span>
   </div>
+
+
+  <!--4 форма-->
+
+  <div class="theory-form" id="fourth-theme-form">
+    <span class="close"></span>
+
+
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+
 
   <div class="container-main" id="main-content">
   <div class="intro">
@@ -215,10 +298,11 @@
       <div class="list-of-topics">
         <h3>Выбор темы</h3>
     <ol class="rounded">
-      <li><a href="#" id="first-html-theme">Знакомство с Js</a></li>
+        <li><a href="#" id="first-html-theme">Знакомство с Js</a></li>
       <li><a href="#" id="second-html-theme">Простые примеры</a></li>
-      <li><a href="#">Функции</a></li>
-      <li><a href="#">OnClick-события</a></li>
+      <li><a href="#" id="third-html-theme">Функции</a></li>
+      <li><a href="#" id="fourth-html-theme">OnClick-события</a></li>
+
     </ol>
   </div>
   </div>
@@ -259,6 +343,6 @@
     </div>
   </footer>
 <script src="./js/script.js"></script>
-<script src="./js/buttons.js"></script>
+<script src="./js/jsButtons.js"></script>
 </body>
 </html>

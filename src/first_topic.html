@@ -14,7 +14,7 @@
         <img src="images/icon-html.png" width="75" height="65" alt="logo" />
       </div>
     </a>
-    <a href="index.html">
+    <a href="index.html" class="header-links">
       <h1>WebLearn</h1 >
     </a>
   </header>
@@ -303,9 +303,6 @@
   </div>
 
 
-
-
-
   <!--4 форма-->
 
   <div class="theory-form" id="fourth-theme-form">
@@ -504,8 +501,8 @@
 
     <div class="theory-form" id="fifth-theme-form">
     <span class="close"></span>
-    <h2>Css свойства</h2><br/>
-    <h3>1. Css свойства</h3>
+    <h2>V. Css свойства</h2><br/>
+    <h3>Css свойства</h3>
      <p>Схема CSS-кода выглядит следующим образом:</p>
 
 <pre class="examples">
@@ -514,102 +511,91 @@
   }
 </pre>
     <p>В этом уроке мы рассмотрим основные CSS-свойства:</p>
-    <ul>
-      <li><a href="">  </a></li>
-      <li><a href="">  </a></li>
-      <li><a href="">  </a></li>
-      <li><a href="">  </a></li>
+    <ul class="theory-form__list-headers list4a" >
+      <li><a href="#css-properties-color">Css-свойства влияющие на цвет и фон</a></li>
+      <li><a href="#css-properties-font">CSS-свойства влияющие на шрифт</a></li>
+      <li><a href="#css-properties-text">CSS-свойства влияющие на текст</a></li>
+      <li><a href="#css-properties-indentation">CSS-свойства влияющие на отсупы</a></li>
     </ul>
-    <h3>Css-свойства влияющие на цвет и фон</h3>
 
+    <h3 id="css-properties-color">Css-свойства влияющие на цвет и фон</h3>
     <p>color: — CSS-свойство влияющее на цвет текста.В качестве его значения выступает имя цвета или шестнацатеричный код в RGB-формате.</p>
     <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">color:red;</span> 
-<span class="code-example__tag">color:#008800;</span> 
-<span class="code-example__tag">color: rgb(205, 51, 255);</span> 
+<span class="css-example__color-red">color:red;</span> 
+<span class="css-example__color-green">color:#008800;</span> 
+<span class="css-example__color-purple">color: rgb(205, 51, 255);</span> 
 </pre>
 <p>background-color: — CSS-свойство влияющее на цвет фона заголовка, абзаца, ссылки и т.д.</p>
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">background-color:red;</span> 
-<span class="code-example__tag">background-color:#008800;</span> 
-<span class="code-example__tag">background-color: rgb(205, 51, 255);</span> 
+<span class="css-example__background-color-red">background-color:red;</span> 
+<span class="css-example__background-color-green">background-color:#008800;</span> 
+<span class="css-example__background-color-purple">background-color: rgb(205, 51, 255);</span> 
 </pre>
 <p>background-image: — CSS-свойство устанавливающее изображение, в качестве фона фона заголовка, абзаца, ссылки и т.д. Его значением выступает URL (адрес) изображения.</p>
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">background-image: url(http://имя домена.ru/kartinka.jpg);</span> 
+<span>background-image: url(http://имя домена.ru/kartinka.jpg);</span> 
 </pre>
-<h3>CSS-свойства влияющие на шрифт</h3>
+<h3 id="css-properties-font">CSS-свойства влияющие на шрифт</h3>
 <p>font-size: — CSS-свойство влияющее на размер шрифта текста. В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
 
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">font-size: 17px;</span>
+<span >font-size: 17px;</span>
 </pre>
 <p>font-family: — CSS-свойство устанавливающее имя шрифта для заголовка, абзаца, ссылки и т.д. 
 В качестве его значения выступает имя шрифта: Arial, Courier, Impact, Garamond, Georgia, Helvetica, Tahoma, Times (установлен по-умочанию), Verdana и т.д.</p>
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">font-family: Arial;</span>
+<span>font-family: Arial;</span>
 </pre>
 
-<h3>CSS-свойства влияющие на текст</h3>
+<h3 id="css-properties-text">CSS-свойства влияющие на текст</h3>
 <p>text-align: — CSS-свойство влияющее на выравнивание текста в заголовке, абзаце и других блочных элементах. В качестве его значения выступает: left, center, right, justify.</p>
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">text-align: left;</span>
+<span>text-align: left;</span>
 </pre>
 
 <p>text-indent: — CSS-свойство влияющее на отступ первой строки (красная строка) текста в закаловке, абзаце и других блочных элементах. 
 В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д</p>
-
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">text-indent: 20px;</span>
+<span>text-indent: 20px;</span>
 </pre>
-
-<p>line-height: — CSS-свойство влияющее на расстояние между строками текста (интерлиньяж) заголовка, абзаца, ссылки и т.д. В качестве его значения выступает единица измерения: множитель, пиксель (px), процент (%), пункт (pt) и т.д.</p>
-
+<p>line-height: — CSS-свойство влияющее на расстояние между строками текста (интерлиньяж) заголовка, абзаца, ссылки и т.д. 
+В качестве его значения выступает единица измерения: множитель, пиксель (px), процент (%), пункт (pt) и т.д.</p>
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">line-height: 35px;</span>
+<span>line-height: 35px;</span>
 </pre>
-
-<h3>CSS-свойства влияющие на внешние и внутренние отступы</h3>
-
+<h3 id="css-properties-indentation">CSS-свойства влияющие на внешние и внутренние отступы</h3>
 <p>margin: — CSS-свойство влияющее на отступ между краем фона одного блочного элемента (заголовки, абзацы и т.д.) и краем фона другого блочного элемента.
   Так же можно устанавливать оступы с определенной стороны прописав ее через тере margin-top:
  В качестве его значения выступает единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
-
 <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">margin: 15px;</span>
-<span class="code-example__tag">margin-left: 25px;</span>
+<span>margin: 15px;</span>
+<span>margin-left: 25px;</span>
 </pre>
-
 <p>padding: — CSS-свойство влияющее на отступ между краем фона элемента и его содержимым (текстом, изображением).
  В качестве его значения выступаюет единица измерения: пиксель (px), процент (%), пункт (pt) и т.д.</p>
-
  <h4>Пример</h4>
 <pre class="examples">
-<span class="code-example__tag">padding: 15px;</span>
-<span class="code-example__tag">padding-left: 25px;</span>
+<span>padding: 15px;</span>
+<span>padding-left: 25px;</span>
 </pre>
-
-
-
     <span class="navigation-buttons">
       <a href="#" class="previous navigation" >&laquo; Назад</a>
       <a href="#" class="next navigation">Вперед &raquo;</a>
     </span>
   </div>
 
-
   <div class="theory-form" id="sixth-theme-form">
     <span class="close"></span>
-    <h2>Блочная верстка</h2><br/>
+    <h2>VI. Блочная верстка</h2><br/>
 
     <p>
     Как правило, веб-страница состоит из множества различных элементов, которые могут иметь сложную структуру.
@@ -633,13 +619,241 @@
        Классы позволяют CSS и Javascript выбирать и получать доступ с помощью селекторов класса или функций, таких как методы DOM document.getElementsByClassName.<br>
        Глобальный атрибут <span class="code-example__attribute">id</span> устанавливает элементу уникальный идентификатор (ID), имя которого должно быть уникальным в документе (на странице). 
      </p>
+     <p>В начале определим все блоки. При работе с элементами, которые используют обтекание и свойство float, важен их порядок.
+      Так, код плавающего элемента, у которого устанавливается свойство float, должен идти перед элементом, который обтекает плавающий элемент.
+      То есть блок сайдбара будет идти до блока основного содержимого:</p>
 
+
+<h4>Html </h4>
+<pre class="code-wrapper">
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td>&lt!<span class="code-example__doctype">DOCTYPE</span> <span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>&lt<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>  &lt<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>    &lt<span class="code-example__tag">title</span>&gt  &lt/<span class="code-example__tag">title</span>&gt</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td> &lt<span class="code-example__tag">link</span> <span class="code-example__attribute">rel</span>=<span class="code-example__quotes">"stylesheet"</span> <span class="code-example__attribute">href</span>=<span class="code-example__quotes">"style.css"</span>&gt</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>  &lt/<span class="code-example__tag">head</span>&gt</td>
+  </tr>
+    <tr>
+    <td>7</td>
+    <td>  &lt<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>8</td>
+    <td> &lt<span class="code-example__tag">div </span><span class="code-example__attribute">class</span>="<span class="code-example__quotes">head</span>"&gt Шапка сайта &lt/<span class="code-example__tag">div</span>&gt </td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>&lt<span class="code-example__tag">div </span><span class="code-example__attribute">class</span>="<span class="code-example__quotes">sidebar</span>"&gt Сайд бар &lt/<span class="code-example__tag">div</span>&gt</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>&lt<span class="code-example__tag">div </span><span class="code-example__attribute">class</span>="<span class="code-example__quotes">main</span>"&gt Содержимое страницы &lt/<span class="code-example__tag">div</span>&gt</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>&lt<span class="code-example__tag">div </span><span class="code-example__attribute">class</span>="<span class="code-example__quotes">footer</span>"&gt Футер &lt/<span class="code-example__tag">div</span>&gt</td>
+  </tr>
+    <tr>
+    <td>12</td>
+    <td>  &lt/<span class="code-example__tag">body</span>&gt</td>
+  </tr>
+    <tr>
+    <td>13</td>
+    <td>&lt/<span class="code-example__tag">html</span>&gt</td>
+  </tr>
+</table>
+</pre>
+
+<h4>Css </h4>
+
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">div</span> {</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>margin:10px;</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>border: 1px solid black;</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>height: 80px;</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>text-align:center;</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>font-size: 2em;</td>
+  </tr>
+    <tr>
+    <td>7</td>
+    <td>}</td>
+  </tr>
+    <tr>
+    <td>8</td>
+    <td><span class="code-example__tag">.header</span> {</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>background-color: darkseagreen;</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>}</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td><span class="code-example__tag">.sidebar</span> {</td>
+  </tr>
+    <tr>
+    <td>12</td>
+    <td>background-color: green;</td>
+  </tr>
+    <tr>
+    <td>13</td>
+    <td>}</td>
+  </tr>
+   <tr>
+    <td>14</td>
+    <td><span class="code-example__tag">main</span> {</td>
+  </tr>
+    <tr>
+    <td>15</td>
+    <td>background-color: lightskyblue;</td>
+  </tr>
+    <tr>
+    <td>16</td>
+    <td>height: 200px;</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>}</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td><span class="code-example__tag">.footer</span> {</td>
+  </tr>
+    <tr>
+    <td>19</td>
+    <td>background-color: darkseagreen;</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>}</td>
+  </tr>
+</table>
+<a href="https://plnkr.co/edit/r9dITykjCLPELyaU?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple">Перейти к коду</a>
+</pre>
+<p>Далее, чтобы переместить блок сайдбара влево по отношению к блоку основного содержимого и получить эффект обтекания,
+ нам надо указать у блока сайдбара свойство float: left и предпочтительную ширину.
+  Ширина может быть фиксированной, например, 150 px или 8 em. Либо также можно использовать проценты, например, 30% - 30% от ширины контейнера body
+  . С одной стороны, блоками с фиксированной шириной легче управлять,
+ но с другой процентные значения ширины позволяют создавать более гибкие, резиновые блоки, которые изменяют размеры при изменении размеров окна браузера.</p>
+
+ <p>Последним шагом является установка отступа блока с основным содержимым от блока сайдбара.
+  Поскольку при обтекании обтекающий блок может обтекать плавающий элемент и справа и снизу, если плавающий элемент имеет меньшую высоту,
+   то нам надо установить отступ, как минимум равный ширине плавающего элемента. 
+ Например, если ширина сайдбара равна 150px, то для блока основного содержимого можно задать отступ в 170px, 
+ что позволит создать пустое пространство между двумя блоками.<br> При этом не стоит у блока основного содержимого указывать явным образом ширину, так как браузеры расширяют его автоматически, чтобы он занимал все доступное место.</p>
+
+<h4>Задание</h4>
+<p>Давайте переместим сайд бар в левую сторону. Нужно с помощью свойсва float подвинуть сайдбар влево.Так же с помощью свойтсва margin указать оступ основнова контента. <a href="https://plnkr.co/edit/r9dITykjCLPELyaU?open=lib%2Fscript.js"  target="_blank">Перейти к заданию.</a></p>
+
+<a href="https://plnkr.co/edit/15Ry9MMYeqFwgud9?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть результат</a>
+
+<p>После того как добавили сайд бар в левую сторону, добавим еще 1 блок, только уже в правую сторону.И нужно не забыть указать блоку с главным контентом отступ с правой стороны. В итоге должно получиться 2 сайдабра, справа и слева. <a href="https://plnkr.co/edit/D7cJShywvtrlhko5?open=lib%2Fscript.js"  target="_blank">Перейтити к заданию.</a></p>
+<a href="https://plnkr.co/edit/P0dQ4U2535MwJrD6?open=lib%2Fscript.js&preview"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть результат</a>
+    
+  <p>Нередко встречается ситуация, когда к вложенным в обтекающий блок элементам также применяется обтекание. Например, блок основного содержимого может включать блок собственно содержимого и блок меню. В принципе к таким блокам будут применяться все те же правила, что были рассмотрены ранее.<a href="https://plnkr.co/edit/eUvb8GEUrkIVWaYl?open=lib%2Fscript.js"  target="_blank">Перейти к примеру.</a></p>
+  
+  <p>В данном примере в блоке main находятся еще 2 блока, которые идут последовательно, давайте попробуем с помощью свойства float раскидать их по сторонам.</p>
     <span class="navigation-buttons">
       <a href="#" class="previous navigation" >&laquo; Назад</a>
       <a href="#" class="next navigation">Вперед &raquo;</a>
     </span>
   </div>
 
+
+  <div class="theory-form" id="seventh-theme-form">
+    <span class="close"></span>
+    <h2>VII. Блочная верстка 2</h2><br/>
+
+<h3>Свойство display</h3>
+  <p>Кроме свойства float, которое позволяет изменять позицию элемента, в CSS есть еще одно важное свойство - display. Оно позволяет управлять блоком элемента и также влиять на его позиционирование относительно соседних элементов.</p>
+  <p>Это свойство может принимать следующие значения:</p>
+  <ul>
+    <li>inline: элемент становится строчным, подобно словам в строке текста</li>
+    <li>block: элемент становится блочным, как параграф</li>
+    <li>inline-block: элемент располагается как строка текста</li>
+    <li>flex: позволяет осуществлять гибкое позиционирование элментов</li>
+    <li>table, inline-table: позволяет расположить элементы в виде таблицы</li>
+    <li>none: элемент не виден и удален из разметки html</li>
+  </ul>
+  <p>Итак, значение block позволяет определить блочный элемент. Такой элемент визуально отделяется от соседних элементов переносом строки, как, например, элемент параграфа p или элемент div, которые по умолчанию являются блочными и при визуализации веб-страницы визуально переносятся на новую строку.</p>
+  <p>В отличие от блочных элементов строчные встраиваются в строку, так как имеют для свойства display значение inline. </p>
+  <p>inline-block - представляет элемент, который обладает смесью признаков блочного и строчного элементов. По отношению к соседним внешним элементам такой элемент расценивается как строчный. То есть он не отделяется от соседних элементов переводом строки. Однако по отношению к вложенным элементам он рассматривается как блочный. И к такому элементу применяются свойства width, height, margin.</p>
+<h3>Псевдо классы</h3>
+<p>Псевдоклассы описывают характеристики элементов, такие как динамическое состояние</p>
+<p>Псевдоклассы дают возможность стилизовать элемент на основе не только отношений в DOM-дереве, но и основываясь на внешних факторах, таких как история посещений (например, :visited), состояние содержимого (вроде :checked у некоторых элементов формы) или позиции курсора мыши (например, :hover определяет, находится ли курсор мыши над элементом).</p>
+    <h4>Пример </h4>
+    <table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">div:hover</span> {</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>background-color: #F89B4D;</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>}</td>
+  </tr>
+</table>
+
+<h3>Создание меню</h3>
+<p>Панель навигации играет важную роль на сайте, так как обеспечиват переходы между страницами сайта или на внешние ресурсы. Рассмотрим, как создать простенькую панель навигации.</p>
+<p>Фактически панель навигации - это набор ссылок, часто в виде ненумерованного списка.
+ Панели навигации бывают самыми различными: вертикальными и горизонтальными, одноуровневыми и многоуровневыми, но в любом случае в центре каждой навигации находится элемент &lt<span class="code-example__tag">а</span>&gt. Поэтому при создании панели навигации мы можем столкнуться с рядом трудностей, которые вытекают из ограничений элемента ссылки. А именно, элемент 
+  &lt<span class="code-example__tag">а</span>&gt является строчным, а это значит, что мы не можем указать для него ширину, высоту, отступы.
+   По ширине ссылка автоматически занимает то место, которое ей необходимо.</p>
+   <h4>Вертикальное меню</h4>
+   <p>Распространенное решение данной проблемы для создания вертикального меню состоит в том, чтобы сделать ссылку блочным элементом.</p>
+<a href="https://plnkr.co/edit/qQDIYtZ0MtDAk1hd?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть пример</a>
+   <p>После установки свойства display: block мы можем определить у блока ссылки ширину, отступы и т.д.</p>
+   <p>inline и inline-block
+    <h4>Горизонтальное меню</h4>
+<p>Для создания горизонтальной панели навигации нам надо сделать каждый элемент li строчным, то есть установить для него display: inline. После этого для элемента ссылки, которая располагается в элементе li, мы можем установить display: inline-block:</p>
+<a href="https://plnkr.co/edit/W3u69fuuOUOk30e9?open=lib%2Fscript.js&preview"  target="_blank" class="code-wrapper__link-exmple result">Посмотреть пример</a>
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
 
 
 
@@ -672,7 +886,9 @@
       <li><a href="#" id="second-html-theme">Подлкючение файлов</a></li>
       <li><a href="#" id="third-html-theme">Больше тегов</a></li>
       <li><a href="#" id="fourth-html-theme">Таблицы и списки</a></li>
-      <li><a href="#" id="fifth-html-theme">Блочная верстка</a></li>
+      <li><a href="#" id="fifth-html-theme">Css свойства</a></li>
+      <li><a href="#" id="sixth-html-theme">Блочная верстка часть 1</a></li>
+      <li><a href="#" id="seventh-html-theme">Блочная верстка часть 2</a></li>
     </ol>
   </div>
   </div>
@@ -697,7 +913,7 @@
       </div>
       <div class="footer-lists">
         <div class="footer-lists-links">
-          <a href="#">
+          <a href="#" class="footer-links">
             <ul class="footer-list">
               <li class="footer-lists-links__item">LearnJS</li>
               <li class="footer-lists-links__item">FAQ</li>

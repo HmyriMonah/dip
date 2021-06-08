@@ -6,9 +6,7 @@ const firstThemeOpenButton = document.getElementById('first-html-theme');
 const secondThemeOpenButton = document.getElementById('second-html-theme');
 const thirdThemeOpenButton = document.getElementById('third-html-theme');
 const fourthThemeOpenButton = document.getElementById('fourth-html-theme');
-const fifthThemeOpenButton = document.getElementById('fifth-html-theme');
-const sixthThemeOpenButton = document.getElementById('sixth-html-theme');
-const seventhThemeOpenButton = document.getElementById('seventh-html-theme');
+
 
 const formsList = document.getElementsByClassName('theory-form');
 
@@ -19,12 +17,10 @@ const firstTheme = document.getElementById('first-theme-form');
 const secondThemeForm = document.getElementById('second-theme-form');
 const thirdThemeForm = document.getElementById('third-theme-form');
 const fourthThemeForm = document.getElementById('fourth-theme-form');
-const fifthThemeForm = document.getElementById('fifth-theme-form');
-const sixthThemeForm = document.getElementById('sixth-theme-form');
-const seventhThemeForm = document.getElementById('seventh-theme-form');
 
 
-console.log(seventhThemeForm);
+
+
 
 const content = document.getElementById('main-content');
 
@@ -47,21 +43,6 @@ listNext[2].onclick = function () {
   fourthThemeForm.classList.add('theory-form-flex');
 };
 
-listNext[3].onclick = function () {
-  fourthThemeForm.classList.remove('theory-form-flex');
-  fifthThemeForm.classList.add('theory-form-flex');
-};
-
-listNext[4].onclick = function () {
-  fifthThemeForm.classList.remove('theory-form-flex');
-  sixthThemeForm.classList.add('theory-form-flex');
-};
-
-listNext[5].onclick = function () {
-  sixthThemeForm.classList.remove('theory-form-flex');
-  seventhThemeForm.classList.add('theory-form-flex');
-};
-
 
 listPrevious[0].onclick = function () {
   secondThemeForm.classList.remove('theory-form-flex');
@@ -78,20 +59,7 @@ listPrevious[2].onclick = function () {
   thirdThemeForm.classList.add('theory-form-flex');
 };
 
-listPrevious[3].onclick = function () {
-  fifthThemeForm.classList.remove('theory-form-flex');
-  fourthThemeForm.classList.add('theory-form-flex');
-};
 
-listPrevious[4].onclick = function () {
-  sixthThemeForm.classList.remove('theory-form-flex');
-  fifthThemeForm.classList.add('theory-form-flex');
-};
-
-listPrevious[5].onclick = function () {
-  seventhThemeForm.classList.remove('theory-form-flex');
-  sixthThemeForm.classList.add('theory-form-flex');
-};
 
 
 
@@ -142,21 +110,44 @@ fourthThemeOpenButton.onclick = function () {
   content.className = 'content-hidden';
 };
 
-//open fourth dorm
-fifthThemeOpenButton.onclick = function () {
-  fifthThemeForm.classList.add('theory-form-flex');
-  document.body.className = 'darkBackGround';
-  content.className = 'content-hidden';
+
+ const helloWorldButton = document.getElementById('code-example__HelloWorld');
+
+ helloWorldButton.onclick = function () {
+  alert("Hello World!");
 };
 
-sixthThemeOpenButton.onclick = function () {
-  sixthThemeForm.classList.add('theory-form-flex');
-  document.body.className = 'darkBackGround';
-  content.className = 'content-hidden';
+
+ const numberButton = document.getElementById('code-example__numbers');
+
+ numberButton.onclick = function () {
+  alert(8+1);
 };
 
-seventhThemeOpenButton.onclick = function () {
-  seventhThemeForm.classList.add('theory-form-flex');
-  document.body.className = 'darkBackGround';
-  content.className = 'content-hidden';
+ const strButton = document.getElementById('code-example__string');
+
+ strButton.onclick = function () {
+  let world="мир.";
+  alert(`Привет ${world}`);
+  alert( `Сумма: ${9 + 1}` );
+};
+
+const boolButton = document.getElementById('code-example__bool');
+
+boolButton.onclick = function () {
+  alert(2<3);
+};
+
+const promptButton = document.getElementById('code-example__prompt');
+
+promptButton.onclick = function () {
+  let name = prompt("Введите имя", "имя");
+  alert(`Ваше имя ${name}`);
+};
+
+const confirmButton = document.getElementById('code-example__confirm');
+
+confirmButton.onclick = function () {
+  let quest= confirm("Вы изучаете js?");
+  alert(quest);
 };
