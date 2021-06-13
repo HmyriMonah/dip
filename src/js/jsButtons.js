@@ -179,23 +179,93 @@ const comparisonFirstInput = document.getElementById('comparison-first-input');
 const comparisonSecondInput = document.getElementById('comparison-second-input');
 const comparisonThirdInput = document.getElementById('comparison-third-input');
 
+const firstError = document.getElementById('first-error');
+const secondError = document.getElementById('second-error');
+const thirdError = document.getElementById('third-error');
+
+// function OnStart() {
+//   let tableList = new Array();
+//   let tr = document.getElementById('task-table').getElementsByTagName('tr');
+//   for (let i = 0; i < tr.length; i++) {
+//     let td = tr.item(i).getElementsByTagName('td');
+//     tableList[i] = new Array();
+//     for (let j = 0; j < td.length; j++) {
+//       tableList[i][j] = td.item(j).innerText;
+
+//       console.log(td.item(j).innerText);
+//     }
+//   }
+//   let stringTest=tableList[1][1] +="ошибка";
+// }
+
+const conditionTask = document.getElementById('code-example__condition-task');
+
+conditionTask.onclick = function () {
+  let firstInputString = comparisonFirstInput.value;
+  firstInputString = firstInputString.replace(/\s+/g, '');
+
+  let checkedResult = checkSign(firstInputString, '=');
+  if (checkedResult.result === false) {
+    errorColor(comparisonFirstInput);
+    firstError.innerHTML = checkedResult.message;
+  } else {
+    normalColor(comparisonFirstInput);
+    firstError.innerHTML = '';
+  }
+  console.log(checkSign(firstInputString, '='));
+
+  let secondInputString = comparisonSecondInput.value;
+  secondInputString = secondInputString.replace(/\s+/g, '');
+
+  let secondCheckedResult = checkSign(secondInputString, '<');
+  if (secondCheckedResult.result === false) {
+    errorColor(comparisonSecondInput);
+    secondError.innerHTML = secondCheckedResult.message;
+  } else {
+    normalColor(comparisonSecondInput);
+    secondError.innerHTML = '';
+  }
+  console.log(checkSign(secondInputString, '<'));
+
+  let thirdInputString = comparisonThirdInput.value;
+  thirdInputString = thirdInputString.replace(/\s+/g, '');
+
+  let thirdCheckedResult = checkSign(thirdInputString, '>');
+  if (thirdCheckedResult.result === false) {
+    errorColor(comparisonThirdInput);
+    thirdError.innerHTML = thirdCheckedResult.message;
+  } else {
+    normalColor(comparisonThirdInput);
+    thirdError.innerHTML = '';
+  }
+  console.log(checkSign(thirdInputString, '>'));
+};
+
 function errorColor(id) {
   id.style.borderColor = '#FF0000';
+  id.style.background = 'white';
 }
 
 function normalColor(id) {
-  id.style.borderColor = '#f000';
+  id.style.borderColor = 'green';
+  id.style.background = '#03bf47';
 }
 
 function checkSign(str, sign) {
   let correctString = [];
   let equalsCorrectCount;
   let inputString = str;
-  if(str.length<1) {
+  if (str.length <= 1) {
     return {
-            result: false,
-            message: 'Нужно что-то написать',
-          };
+      result: false,
+      message: 'Нужно что-то написать',
+    };
+  }
+  if (str.length == 7) {
+    return {
+      result: false,
+      message: 'Нужен оператор сравнения',
+    };
   }
   if (sign === '=') {
     correctString[0] = 'example==25';
@@ -272,8 +342,10 @@ function comparisonOperatorsFirstInput(e) {
     let checkedResult = checkSign(inputString, '=');
     if (checkedResult.result === false) {
       errorColor(comparisonFirstInput);
+      firstError.innerHTML = checkedResult.message;
     } else {
       normalColor(comparisonFirstInput);
+      firstError.innerHTML = '';
     }
     console.log(checkSign(inputString, '='));
   }
