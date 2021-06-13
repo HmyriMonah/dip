@@ -14,6 +14,7 @@ const formsList = document.getElementsByClassName('theory-form');
 
 
 
+
 //forms
 const firstTheme = document.getElementById('first-theme-form');
 const secondThemeForm = document.getElementById('second-theme-form');

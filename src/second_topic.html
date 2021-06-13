@@ -6,19 +6,20 @@
   <link rel="shortcut icon" href="images/html-icon.png" type="image/x-icon">
    <link rel="stylesheet" href="css/style.css" />
    <link rel="stylesheet" href="css/thmes_style.css" />
+
+
 </head> 
 <body>
   <header class="header">
     <a href="index.html">
       <div class="header-logo">
-        <img src="images/javascript-logo.png" alt="logo" />
+        <img src="images/icon-html.png" width="75" height="65" alt="logo" />
       </div>
     </a>
-    <a href="index.html">
-      <h1>LearnJs</h1 >
+    <a href="index.html" class="header-links">
+      <h1>WebLearn</h1 >
     </a>
   </header>
-
 
 <!--1 форма-->
   <div class="theory-form" id="first-theme-form">
@@ -210,6 +211,18 @@
 <a href="" class="code-wrapper__link-exmple" id="code-example__confirm">Запустить</a>
 </table>
 
+
+<a href="" class="code-wrapper__link-exmple" id="code-example__confirm">Перейти коду</a>
+    <span class="navigation-buttons">
+      <a href="#" class="previous navigation" >&laquo; Назад</a>
+      <a href="#" class="next navigation">Вперед &raquo;</a>
+    </span>
+  </div>
+
+  <!--3 форма-->
+
+  <div class="theory-form" id="third-theme-form">
+    <span class="close"></span>
 <h3>Операторы сравнения </h3>
 <p>Многие операторы сравнения известны нам из математики.</p>
 <ul>
@@ -237,22 +250,96 @@
 <h3>Оператор if</h3>
 <p>Оператор if(...) вычисляет условие в скобках и, если результат true, то выполняет блок кода.</p>
 <p>В нутри оператора if можно использовать все операторы сравнения </p>
- <h3>Задание</h3>
 
-  <p>С помощью изученых функций, выведите на экран пример, рещение котрого нужно ввести с клавиатры, и если ответ верный то вывести "Верный ответ" если нет, то "Подумайте еще "</p>
-<a href="" class="code-wrapper__link-exmple" id="code-example__confirm">Перейти коду</a>
-    <span class="navigation-buttons">
-      <a href="#" class="previous navigation" >&laquo; Назад</a>
-      <a href="#" class="next navigation">Вперед &raquo;</a>
-    </span>
-  </div>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> example= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"2+2= "</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(example==4){<span class="code-example__tag">alert</span>("Это верно!")};</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__condition">Запустить</a>
+</table>
+<p>Инструкция if (…) вычисляет выражение в скобках и преобразует результат к логическому типу.<br>
+    Число 0, пустая строка "", null, undefined и NaN становятся false. Из-за этого их называют «ложными» («falsy») значениями.<br> 
+    Остальные значения становятся true, поэтому их называют «правдивыми» («truthy»).
+</p>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">if</span>(1){...}; </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(0){...}; </td>
+  </tr>
+</table>
+<p>Первый код будет выполняться всегда, а второй никогда.</p>
+<h3>Блок else</h3>
+<p>Оператор if может содержать необязательный блок «else» («иначе»). Он выполняется, когда условие ложно.</p>
+<table class="code-example">
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> example= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"2+2= "</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(example==4){<span class="code-example__tag">alert</span>("Это верно!")};</td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">else</span>{<span class="code-example__tag">alert</span>("Вы ошиблись.")};</td>
+  </tr>
+<a href="" class="code-wrapper__link-exmple" id="code-example__condition-else">Запустить</a>
+</table>
 
-  <!--3 форма-->
+<p>Так же с помощью оператора «if» и блока «else», можно построить цепочку из условий.</p>
 
-  <div class="theory-form" id="third-theme-form">
-    <span class="close"></span>
+<table class="code-example">
+  <pre> 
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> example= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"2+2= "</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(example==4){<span class="code-example__tag">alert</span>("Это верно!");}</td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">else</span>{</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>      <span class="code-example__tag"> if</span>(example<4) {</td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td><span class="code-example__tag"> alert</span>("Слишком мало.");</td>
+  </tr>
+   <tr>
+    <td>6</td>
+    <td>} <span class="code-example__tag">else</span> { </td>
+  </tr>
 
-
+     <tr>
+    <td>7</td>
+    <td><span class="code-example__tag"> if</span>(example>4) {</td>
+  </tr>
+     <tr>
+    <td>8</td>
+    <td><span class="code-example__tag"> alert</span>("Слишком много.");</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>};</td>
+  </tr>
+</pre>
+<a href="" class="code-wrapper__link-exmple"  target="_blank" id="code-example__condition-if-else">Запустить</a>
+</table>
+<a href="https://plnkr.co/edit/0AvG9oiHXMWbOELd?open=lib%2Fscript.js"  target="_blank" class="code-wrapper__link-exmple" >Посмотреть код</a>
 
     <span class="navigation-buttons">
       <a href="#" class="previous navigation" >&laquo; Назад</a>
@@ -300,8 +387,8 @@
     <ol class="rounded">
         <li><a href="#" id="first-html-theme">Знакомство с Js</a></li>
       <li><a href="#" id="second-html-theme">Простые примеры</a></li>
-      <li><a href="#" id="third-html-theme">Функции</a></li>
-      <li><a href="#" id="fourth-html-theme">OnClick-события</a></li>
+      <li><a href="#" id="third-html-theme">Операторы сравнения</a></li>
+      <li><a href="#" id="fourth-html-theme">Операторы сравнения</a></li>
 
     </ol>
   </div>
@@ -314,7 +401,7 @@
 </div>
   <div class="anchor">
     <a href="#"  onclick="return false">
-      <img class="anchor__img" src="images/upArrow.png" width="100" height="100" alt="наверх" />
+      <img class="anchor__img" src="images/upArrow.png" width="58" height="58" id="anchor__img" alt="наверх" />
     </a>
   </div>
 
@@ -344,5 +431,6 @@
   </footer>
 <script src="./js/script.js"></script>
 <script src="./js/jsButtons.js"></script>
+
 </body>
 </html>

@@ -15,7 +15,7 @@ function up() {
 
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
-  if (currentScrollPos > 400) {
+  if (currentScrollPos > 500) {
     anchor[0].classList.add('anchor-appearance');
   } else {
     anchor[0].classList.remove('anchor-appearance');
@@ -25,6 +25,7 @@ window.onscroll = function () {
 anchor[0].onclick = function () {
  up();
 };
+
 
 
 // window.onload = function upload() {

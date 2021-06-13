@@ -151,3 +151,43 @@ confirmButton.onclick = function () {
   let quest= confirm("Вы изучаете js?");
   alert(quest);
 };
+
+const conditionButton = document.getElementById('code-example__condition');
+
+conditionButton.onclick = function () {
+  let example= prompt("2+2= ");
+  if(example==4) {
+    alert("Это верно!")
+  };
+};
+
+const elseConditionButton = document.getElementById('code-example__condition-else');
+
+elseConditionButton.onclick = function () {
+  let example= prompt("2+2= ");
+  if(example==4) {
+    alert("Это верно!")
+  }else
+  {
+    alert("Вы ошиблись.")
+  }
+};
+
+const ifElseConditionButton = document.getElementById('code-example__condition-if-else');
+
+ifElseConditionButton.onclick = function () {
+  let example= prompt("2+2= ");
+  if(example==4) {
+    alert("Это верно!")
+  }else
+  {
+    if(example  <4) {
+      alert("Слишком мало.");
+    }else {
+      if(example > 4 ) {
+        alert("Слишком много.");
+      }
+    }
+  }
+};
+
