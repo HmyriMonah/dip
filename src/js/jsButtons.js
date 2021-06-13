@@ -175,42 +175,107 @@ ifElseConditionButton.onclick = function () {
   }
 };
 
+const comparisonFirstInput = document.getElementById('comparison-first-input');
+const comparisonSecondInput = document.getElementById('comparison-second-input');
+const comparisonThirdInput = document.getElementById('comparison-third-input');
+
+function errorColor(id) {
+  id.style.borderColor = '#FF0000';
+}
+
+function normalColor(id) {
+  id.style.borderColor = '#f000';
+}
+
+function checkSign(str, sign) {
+  let correctString = [];
+  let equalsCorrectCount;
+  let inputString = str;
+  if(str.length<1) {
+    return {
+            result: false,
+            message: 'Нужно что-то написать',
+          };
+  }
+  if (sign === '=') {
+    correctString[0] = 'example==25';
+    correctString[1] = 'example===25';
+    equalsCorrectCount = 3;
+  } else {
+    if (sign === '<') {
+      correctString[0] = 'example<25';
+      correctString[1] = 'example<=24';
+      equalsCorrectCount = 0;
+    } else {
+      if (sign === '>') {
+        correctString[0] = 'example>25';
+        correctString[1] = 'example>24';
+        equalsCorrectCount = 0;
+      }
+    }
+  }
+  inputString = inputString.replace(/\s+/g, '');
+  let varible = inputString.substring(0, 7);
+  let equalsCount = inputString.match(/[\=\?]/g);
+  if (equalsCount == null) {
+    equalsCount = 0;
+  } else {
+    equalsCount = inputString.match(/[\=\?\<]/g).length;
+  }
+  if (inputString == correctString[0] || inputString == correctString[1]) {
+    //console.log('Всё верно');
+    return { result: true, message: 'Всё верно' };
+  } else {
+    if (
+      varible !== 'example' ||
+      (inputString[7] !== '=' &&
+        inputString[7] !== '!' &&
+        inputString[7] !== '<' &&
+        inputString[7] !== '>' &&
+        inputString.length > 8)
+    ) {
+      //.log('Ошибка в названии переменной');
+      return { result: false, message: 'Ошибка в названии переменной' };
+    } else {
+      if (inputString[7] !== sign) {
+        //console.log("Вы используете не тот оператор сравнения.");
+        return { result: false, message: 'Вы используете не тот оператор сравнения' };
+      } else {
+        if (equalsCount !== equalsCorrectCount) {
+          //console.log('Не верное количетсво знаков "="');
+          return { result: false, message: 'Не верное количетсво знаков "="' };
+        } else {
+          //console.log("После оператора сравнения нужно указать верный ответ - '25'");
+          return {
+            result: false,
+            message: 'После оператора сравнения нужно указать верный ответ - "25"',
+          };
+        }
+      }
+    }
+  }
+}
+
 function comparisonOperatorsFirstInput(e) {
   e = e || window.event;
   if (e.keyCode == 13) {
     let elem = e.srcElement || e.target;
     let inputString = elem.value;
     inputString = inputString.replace(/\s+/g, '');
-    let varible = inputString.substring(0,7);
+    let varible = inputString.substring(0, 7);
     let equalsCount = inputString.match(/[\=\?\<]/g);
-    if(equalsCount == null) {
-       equalsCount= 0 ;
-    }else {
-       equalsCount= inputString.match(/[\=\?\<]/g).length;
+    if (equalsCount == null) {
+      equalsCount = 0;
+    } else {
+      equalsCount = inputString.match(/[\=\?\<]/g).length;
     }
-    if (inputString === 'example==25' || inputString === 'example===25') {
-      console.log("Всё верно");
-      return true;
-    }else {
-      if(varible !== "example" || (inputString[7]!=="=" && inputString[7]!=="!" && inputString[7]!=="<" && inputString[7]!==">" && inputString.length>8)) {
-        console.log("Ошибка в названии переменной");
-      }else {
-        if (equalsCount>3) {
-          console.log("Для проверки достатчно 3 знаков =, (2===2).");
-        }else {
-          if(equalsCount<= 1) {
-            console.log("Вы забыли знак равно ");
-          }else {
-            if(inputString[7]!=="=") {
-              console.log("Вы используете не тот оператор сравнения, нужен '===' или '=='");
-            }else {
-              console.log("После оператора сравнения нужно указать верный ответ - '25'");
-            }
-          }
-        }
-      }
-      return false;
+    let checkedResult = checkSign(inputString, '=');
+    if (checkedResult.result === false) {
+      errorColor(comparisonFirstInput);
+    } else {
+      normalColor(comparisonFirstInput);
     }
+    console.log(checkSign(inputString, '='));
   }
 }
 
@@ -220,36 +285,19 @@ function comparisonOperatorsSecondInput(e) {
     let elem = e.srcElement || e.target;
     let inputString = elem.value;
     inputString = inputString.replace(/\s+/g, '');
-    let varible = inputString.substring(0,7);
+    let varible = inputString.substring(0, 7);
     let equalsCount = inputString.match(/[\=\?\<]/g);
-    if(equalsCount == null) {
-       equalsCount= 0 ;
-    }else {
-       equalsCount= inputString.match(/[\=\?\<]/g).length;
+    if (equalsCount == null) {
+      equalsCount = 0;
+    } else {
+      equalsCount = inputString.match(/[\=\?\<]/g).length;
     }
-    if (inputString === 'example<25' || inputString === 'example<=24') {
-      console.log("Всё верно");
-      return true;
-    }else {
-      if(varible !== "example" || (inputString[7]!=="=" && inputString[7]!=="!" && inputString[7]!=="<" && inputString[7]!==">" && inputString.length>8)) {
-        console.log("Ошибка в названии переменной");
-      }else {
-        if (equalsCount>1) {
-          console.log("Для проверки достатчно 1 знака =, (2>1), или можно написать без них .");
-        }else {
-          if(equalsCount<= 1) {
-            console.log("Вы забыли знак равно ");
-          }else {
-            if(inputString[7]!=="=") {
-              console.log("Вы используете не тот оператор сравнения, нужен '===' или '=='");
-            }else {
-              console.log("После оператора сравнения нужно указать верный ответ - '25'");
-            }
-          }
-        }
-      }
-      return false;
+    if (checkSign(inputString, '<').result === false) {
+      errorColor(comparisonSecondInput);
+    } else {
+      normalColor(comparisonSecondInput);
     }
+    console.log(checkSign(inputString, '<'));
   }
 }
 
@@ -257,6 +305,20 @@ function comparisonOperatorsThirdInput(e) {
   e = e || window.event;
   if (e.keyCode == 13) {
     let elem = e.srcElement || e.target;
-    console.log(elem.value);
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let equalsCount = inputString.match(/[\=\?\<]/g);
+    if (equalsCount == null) {
+      equalsCount = 0;
+    } else {
+      equalsCount = inputString.match(/[\=\?\<]/g).length;
+    }
+    if (checkSign(inputString, '>').result === false) {
+      errorColor(comparisonThirdInput);
+    } else {
+      normalColor(comparisonThirdInput);
+    }
+    console.log(checkSign(inputString, '>'));
   }
 }
