@@ -160,6 +160,10 @@ table {
   color:#8703bd;
 }
 
+.code-example__comment {
+  color: #9a9a9a;
+}
+
 a.previous, .next{
   text-decoration: none;
 

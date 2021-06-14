@@ -12,9 +12,6 @@ const seventhThemeOpenButton = document.getElementById('seventh-html-theme');
 
 const formsList = document.getElementsByClassName('theory-form');
 
-
-
-
 //forms
 const firstTheme = document.getElementById('first-theme-form');
 const secondThemeForm = document.getElementById('second-theme-form');
@@ -23,7 +20,6 @@ const fourthThemeForm = document.getElementById('fourth-theme-form');
 const fifthThemeForm = document.getElementById('fifth-theme-form');
 const sixthThemeForm = document.getElementById('sixth-theme-form');
 const seventhThemeForm = document.getElementById('seventh-theme-form');
-
 
 console.log(seventhThemeForm);
 
@@ -63,7 +59,6 @@ listNext[5].onclick = function () {
   seventhThemeForm.classList.add('theory-form-flex');
 };
 
-
 listPrevious[0].onclick = function () {
   secondThemeForm.classList.remove('theory-form-flex');
   firstTheme.classList.add('theory-form-flex');
@@ -94,12 +89,10 @@ listPrevious[5].onclick = function () {
   sixthThemeForm.classList.add('theory-form-flex');
 };
 
-
-
-function closeForms(){
-  Array.from(formsList).forEach(elem => {
+function closeForms() {
+  Array.from(formsList).forEach((elem) => {
     elem.classList.remove('theory-form-flex');
-});
+  });
 }
 
 function showContent() {
@@ -161,3 +154,124 @@ seventhThemeOpenButton.onclick = function () {
   document.body.className = 'darkBackGround';
   content.className = 'content-hidden';
 };
+
+function errorColor(id) {
+  id.style.borderColor = '#FF0000';
+  id.style.background = 'white';
+}
+
+function normalColor(id) {
+  id.style.borderColor = 'green';
+  id.style.background = '#03bf47';
+}
+
+const titleInput = document.getElementById('title-input');
+
+const titleError = document.getElementById('title-error');
+
+const titleTask = document.getElementById('code-example__title-task');
+
+titleTask.onclick = function () {
+  let firstInputString = titleInput.value;
+  firstInputString = firstInputString.replace(/\s+/g, '');
+
+  let checkedResult = checkTitle(firstInputString, '&');
+  if (checkedResult.result === false) {
+    errorColor(titleInput);
+    titleError.innerHTML = checkedResult.message;
+  } else {
+    normalColor(titleInput);
+    titleError.innerHTML = '';
+  }
+};
+
+function checkTitle(str, sign) {
+  let correctString = [];
+  let equalsCorrectCount;
+  let inputString = str;
+  if (str.length <= 1) {
+    return {
+      result: false,
+      message: 'Нужно что-то написать',
+    };
+  }
+  let openTag = inputString.substring(0, 7);
+  console.log(openTag);
+  let closeTAg = inputString.substr(inputString.length - 8);
+  console.log(closeTAg);
+  console.log();
+  if(openTag=="<title>" && closeTAg=="</title>") {
+    let resStr=inputString.replace(openTag,'');
+    resStr=resStr.replace(closeTAg,'title изминен');
+    document.title=resStr;
+        return {
+      result: true,
+      message: 'Верно',
+    };
+  }else {
+    if(openTag!="<title>") {
+       return {
+      result: false,
+      message: 'У вас проблемы с открываюищим тегом',
+    };
+    }else {
+      if(closeTAg!="</title>") {
+         return {
+      result: false,
+      message: 'У вас проблемы с закрывающим тегом',
+    };
+      }
+    }
+  }
+  let openBracketsCount = inputString.match(/[\<\?]/g);
+  if (openBracketsCount == null) {
+    openBracketsCount = 0;
+  } else {
+    openBracketsCount = inputString.match(/[\<\?]/g).length;
+  }
+  let closeBracketsCount = inputString.match(/[\>\?]/g);
+  if (closeBracketsCount == null) {
+    closeBracketsCount = 0;
+  } else {
+    closeBracketsCount = inputString.match(/[\>\?]/g).length;
+  }
+  if (openBracketsCount != closeBracketsCount) {
+    console.log(openBracketsCount);
+    console.log(closeBracketsCount);
+    return {
+      result: false,
+      message: 'не верное кол-во скобок',
+    };
+  }
+
+}
+
+function titleInputTask(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    let elem = e.srcElement || e.target;
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let openBracketsCount = inputString.match(/[\(\?\<]/g);
+    if (openBracketsCount == null) {
+      openBracketsCount = 0;
+    } else {
+      openBracketsCount = inputString.match(/[\(\?\<]/g).length;
+    }
+    let closeBracketsCount = inputString.match(/[\)\?\<]/g);
+    if (closeBracketsCount == null) {
+      closeBracketsCount = 0;
+    } else {
+      closeBracketsCount = inputString.match(/[\)\?\<]/g).length;
+    }
+    console.log(checkTitle(inputString, '&'));
+    if (!checkTitle(inputString, '&').result) {
+      errorColor(titleInput);
+      titleError.innerHTML = checkTitle(inputString, '&').message;
+    } else {
+      normalColor(titleInput);
+      titleError.innerHTML = 'title изминен';
+    }
+  }
+}

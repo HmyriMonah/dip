@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-console.log('hello 1232321');
 
 //open form buttons
 const firstThemeOpenButton = document.getElementById('first-html-theme');
@@ -70,7 +69,7 @@ document.onclick = function () {
   }
 };
 
-//open first dorm
+//open first form
 firstThemeOpenButton.onclick = function () {
   firstTheme.classList.add('theory-form-flex');
   document.body.className = 'darkBackGround';
@@ -183,20 +182,7 @@ const firstError = document.getElementById('first-error');
 const secondError = document.getElementById('second-error');
 const thirdError = document.getElementById('third-error');
 
-// function OnStart() {
-//   let tableList = new Array();
-//   let tr = document.getElementById('task-table').getElementsByTagName('tr');
-//   for (let i = 0; i < tr.length; i++) {
-//     let td = tr.item(i).getElementsByTagName('td');
-//     tableList[i] = new Array();
-//     for (let j = 0; j < td.length; j++) {
-//       tableList[i][j] = td.item(j).innerText;
 
-//       console.log(td.item(j).innerText);
-//     }
-//   }
-//   let stringTest=tableList[1][1] +="ошибка";
-// }
 
 const conditionTask = document.getElementById('code-example__condition-task');
 
@@ -394,3 +380,257 @@ function comparisonOperatorsThirdInput(e) {
     console.log(checkSign(inputString, '>'));
   }
 }
+
+const logicAndButton = document.getElementById('code-example__logic-operator-and');
+
+logicAndButton.onclick = function () {
+  alert(true && true); //true
+  alert(true && false); //false
+  alert(false && true); //false
+  alert(false && false); //false
+};
+
+const logicOrButton = document.getElementById('code-example__logic-operator-or');
+
+logicOrButton.onclick = function () {
+  alert(true || true); //true
+  alert(true || false); //true
+  alert(false || true); //true
+  alert(false || false); //false
+};
+
+const logicNotButton = document.getElementById('code-example__logic-operator-not');
+
+logicNotButton.onclick = function () {
+  alert(!true); //false
+  alert(!false); //true
+  alert(!1); //false
+  alert(!0); //true
+};
+
+const logicIfButton = document.getElementById('code-example__logic-operators-if');
+
+logicIfButton.onclick = function () {
+  let example = prompt('Введите число от 0 до 20');
+  if (example == 15 || example == 5) {
+    alert('Вы ввели 5 или 15 ');
+    1;
+  }
+  if (example < 15 && example > 5) {
+    alert('Ваше число между 5 и 15 ');
+  }
+  if (!(example <= 15 && example >= 5)) {
+    alert('Ваше число не находится между 5 и 15 ');
+  }
+};
+
+
+const logicFirstInput = document.getElementById('logic-first-input');
+const logicSecondInput = document.getElementById('logic-second-input');
+const logicThirdInput = document.getElementById('logic-third-input');
+
+const firstLogicError = document.getElementById('first-logic-error');
+const seconLogicdError = document.getElementById('second-logic-error');
+const thirdLogicError = document.getElementById('third-logic-error');
+
+
+
+const logicTask = document.getElementById('code-example__logic-task');
+
+logicTask.onclick = function () {
+  let firstInputString = logicFirstInput.value;
+  firstInputString = firstInputString.replace(/\s+/g, '');
+
+  let checkedResult = checkLogicSign(firstInputString, '&');
+  if (checkedResult.result === false) {
+    errorColor(logicFirstInput);
+    firstLogicError.innerHTML = checkedResult.message;
+  } else {
+    normalColor(logicFirstInput);
+    firstLogicError.innerHTML = '';
+  }
+
+
+  let secondInputString = logicSecondInput.value;
+  secondInputString = secondInputString.replace(/\s+/g, '');
+
+  let secondCheckedResult = checkLogicSign(secondInputString, '!');
+  if (secondCheckedResult.result === false) {
+    errorColor(logicSecondInput);
+    seconLogicdError.innerHTML = secondCheckedResult.message;
+  } else {
+    normalColor(logicSecondInput);
+    seconLogicdError.innerHTML = '';
+  }
+
+
+  let thirdInputString = logicThirdInput.value;
+  thirdInputString = thirdInputString.replace(/\s+/g, '');
+
+  let thirdCheckedResult = checkLogicSign(thirdInputString, '|');
+  if (thirdCheckedResult.result === false) {
+    errorColor(logicThirdInput);
+    thirdLogicError.innerHTML = thirdCheckedResult.message;
+  } else {
+    normalColor(logicThirdInput);
+    thirdLogicError.innerHTML = '';
+  }
+
+};
+
+
+
+
+function checkLogicSign(str, sign) {
+  let correctString = [];
+  let equalsCorrectCount;
+  let inputString = str;
+  if (str.length <= 1) {
+    return {
+      result: false,
+      message: 'Нужно что-то написать',
+    };
+  }
+  let openBracketsCount = inputString.match(/[\(\?\<]/g);
+  if (openBracketsCount == null) {
+    openBracketsCount = 0;
+  } else {
+    openBracketsCount = inputString.match(/[\(\?\<]/g).length;
+  }
+  let closeBracketsCount = inputString.match(/[\)\?\<]/g);
+  if (closeBracketsCount == null) {
+    closeBracketsCount = 0;
+  } else {
+    closeBracketsCount = inputString.match(/[\)\?\<]/g).length;
+  }
+  if(openBracketsCount!=closeBracketsCount) {
+    return {
+      result: false,
+      message: 'не верное кол-во скобок',
+    };
+  }
+  inputString=inputString.replace(/[{()}]/g, '');
+  console.log(inputString);
+  if (sign === '&') {
+    correctString[0] = 'example>10&&example<20';
+    correctString[1] = 'example<20&&example>10';
+  } else {
+    if (sign === '|') {
+      correctString[0] = 'example==10||example==20';
+      correctString[1] = 'example==20||example==10';
+    } else {
+      if (sign === '!') {
+        correctString[0] = '!example<20&&example>10';
+        correctString[1] = '!example>10&&example<20';
+      }
+    }
+  }
+  inputString = inputString.replace(/\s+/g, '');
+  let varible = inputString.substring(0, 7);
+  let equalsCount = inputString.match(/[\=\?]/g);
+  if (equalsCount == null) {
+    equalsCount = 0;
+  } else {
+    equalsCount = inputString.match(/[\=\?\<]/g).length;
+  }
+  if (inputString == correctString[0] || inputString == correctString[1]) {
+    //console.log('Всё верно');
+    return { result: true, message: 'Всё верно' };
+  } else {
+    if (
+      varible !== 'example' ||
+      (inputString[7] !== '=' &&
+        inputString[7] !== '!' &&
+        inputString[7] !== '<' &&
+        inputString[7] !== '>' &&
+        inputString.length > 8)
+    ) {
+      //.log('Ошибка в названии переменной');
+      return { result: false, message: 'Ошибка ' };
+    } else {
+      if (inputString[7] !== sign) {
+        //console.log("Вы используете не тот оператор сравнения.");
+        return { result: false, message: 'Ошибка' };
+      } 
+    }
+  }
+}
+
+function logicOperatorsFirstInput(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    let elem = e.srcElement || e.target;
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let openBracketsCount = inputString.match(/[\(\?\<]/g);
+    if (openBracketsCount == null) {
+      openBracketsCount = 0;
+    } else {
+      openBracketsCount = inputString.match(/[\(\?\<]/g).length;
+    }
+    let closeBracketsCount = inputString.match(/[\)\?\<]/g);
+    if (closeBracketsCount == null) {
+      closeBracketsCount = 0;
+    } else {
+      closeBracketsCount = inputString.match(/[\)\?\<]/g).length;
+    }
+     console.log(checkLogicSign(inputString, '&'));
+    if (!checkLogicSign(inputString, '&').result) {
+      errorColor(logicFirstInput);
+      firstLogicError.innerHTML = checkLogicSign(inputString, '&').message;
+    } else {
+      normalColor(logicFirstInput);
+      firstLogicError.innerHTML = '';
+    }
+  }
+}
+
+function logicOperatorsSecondInput(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    let elem = e.srcElement || e.target;
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let equalsCount = inputString.match(/[\=\?\<]/g);
+    if (equalsCount == null) {
+      equalsCount = 0;
+    } else {
+      equalsCount = inputString.match(/[\=\?\<]/g).length;
+    }
+    console.log(checkLogicSign(inputString, '!'));
+    if (!checkLogicSign(inputString, '!').result) {
+      errorColor(logicSecondInput);
+      seconLogicdError.innerHTML = checkLogicSign(inputString, '&').message;
+    } else {
+      normalColor(logicSecondInput);
+      seconLogicdError.innerHTML = '';
+    }
+  }
+}
+
+function logicOperatorsThirdInput(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    let elem = e.srcElement || e.target;
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let equalsCount = inputString.match(/[\=\?\<]/g);
+    if (equalsCount == null) {
+      equalsCount = 0;
+    } else {
+      equalsCount = inputString.match(/[\=\?\<]/g).length;
+    }
+    console.log(checkLogicSign(inputString, '|'));
+     if (!checkLogicSign(inputString, '|').result) {
+      errorColor(logicThirdInput);
+      thirdLogicError.innerHTML = checkLogicSign(inputString, '|').message;
+    } else {
+      normalColor(logicThirdInput);
+      thirdLogicError.innerHTML = '';
+    }
+  }
+}
+

@@ -344,8 +344,6 @@
 <p>С помощью изученных операторов спросите пользователя ответ примера, и если он отвечает правильно поздравте его с верным решением, если нет, 
   то подскажите в какую сторону ему двигаться,как в примере.<br>Пример для вопроса: "5*5=".</p>
 
-
-
 <table class="code-example" id="task-table">
   <pre> 
   <tr>
@@ -435,28 +433,201 @@
   <li>НЕ ! – логическое отрицание (инверсия) – NOT.</li>
 </ul>
 <p>Логические операторы возращают true или false.</p>
-<h3>Логическое и (&&)</h3>
+
+<h3>Логическое и ( &&, and )</h3>
   <p>В программировании И возращает true, если оба аргумента истенны, в противном случае - false:</p>
   <table class="code-example" >
   <pre> 
   <tr>
     <td>1</td>
-    <td><span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"2+2= "</span>); </td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">true</span> && <span class="code-example__attribute">true</span>); <span class="code-example__comment">//true</span> </td>
   </tr>
     <tr>
     <td>2</td>
-    <td><span class="code-example__tag">if</span>(example==4){<span class="code-example__tag">alert</span>("Это верно!");}</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">true</span> && <span class="code-example__attribute">false</span>); <span class="code-example__comment">//false</span></td>
   </tr>
    <tr>
     <td>3</td>
-    <td><span class="code-example__tag">else</span>{</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">false</span> && <span class="code-example__attribute">true</span>); <span class="code-example__comment">//false</span></td>
   </tr>
     <tr>
     <td>4</td>
-    <td> <span class="code-example__tag"> if</span>(example<4) {</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">false</span> && <span class="code-example__attribute">false</span>); <span class="code-example__comment">//false</span></td>
   </tr>
 </pre>
-<a href="" class="code-wrapper__link-exmple"  target="_blank" id="code-example__condition-if-else">Запустить</a>
+<a href="#code-example__logic-operator-and" class="code-wrapper__link-exmple"  id="code-example__logic-operator-and">Запустить</a>
+</table>
+
+<h3>Логическое или ( ||, or )</h3>
+  <p>В программировании ИЛИ возращает true, если хотябы 1 равен true, в противном случае - false:</p>
+  <table class="code-example" >
+  <pre> 
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">true</span> || <span class="code-example__attribute">true</span>); <span class="code-example__comment">//true</span> </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">true</span> || <span class="code-example__attribute">false</span>); <span class="code-example__comment">//true</span></td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">false</span> || <span class="code-example__attribute">true</span>); <span class="code-example__comment">//true</span></td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td><span class="code-example__tag">alert</span>(<span class="code-example__attribute">false</span> ||<span class="code-example__attribute">false</span>); <span class="code-example__comment">//false</span></td>
+  </tr>
+</pre>
+<a href="#code-example__logic-operator-or" class="code-wrapper__link-exmple"  id="code-example__logic-operator-or">Запустить</a>
+</table>
+
+<h3>Логическое не ( !, not )</h3>
+  <p>Данный оператор принимает один аргумент, после приводит его к логическому типу true/false.<br>
+    Затем возращает противоположное значение.
+  </p>
+  <table class="code-example" >
+  <pre> 
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__tag">alert</span>(!<span class="code-example__attribute">true</span>); <span class="code-example__comment">//false</span> </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">alert</span>(!<span class="code-example__attribute">false</span>); <span class="code-example__comment">//true</span></td>
+  </tr>
+   <tr>
+    <td>3</td>
+    <td><span class="code-example__tag">alert</span>(!<span class="code-example__attribute">1</span>); <span class="code-example__comment">//false</span></td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td><span class="code-example__tag">alert</span>(!<span class="code-example__attribute">0</span>); <span class="code-example__comment">//true</span></td>
+  </tr>
+</pre>
+<a href="#code-example__logic-operator-not" class="code-wrapper__link-exmple"  id="code-example__logic-operator-not">Запустить</a>
+</table>
+
+
+<h3>Примеры с if</h3>
+
+<table class="code-example" >
+  <pre> 
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> example= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"Введите число от 0 до 20"</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(example<15 && example>5) {</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Ваше число между 5 и 15 "</span>);</td>
+  </tr>
+   <tr>
+    <td>4</td>
+    <td>}</td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td><span class="code-example__tag">if</span>(!(example<15 && example>5)){</td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Ваше число не находится между 5 и 15 "</span>);</td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td>}</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><span class="code-example__tag">if</span>(example==15 || example==5){</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Вы ввели 5 или 15 "</span>);</td>
+  </tr>
+   <tr>
+    <td>10</td>
+    <td>}</td>
+  </tr>
+   
+</pre>
+<a href="code-example__logic-operators-if" class="code-wrapper__link-exmple"  id="code-example__logic-operators-if">Запустить</a>
+</table>
+<a href="https://plnkr.co/edit/LV1cwYnU0B4yqhBw?open=lib%2Fscript.js&preview"  target="_blank" class="code-wrapper__link-exmple" >Посмотреть код</a>
+
+
+<h3>Задание</h3>
+
+<table class="code-example" >
+  <pre> 
+  <tr>
+    <td>1</td>
+    <td><span class="code-example__variable">let</span> example= <span class="code-example__tag">prompt</span>(<span class="code-example__quotes">"Введите число от 0 до 20"</span>); </td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td><span class="code-example__tag">if</span>(  <input
+      type='text'
+      class='table-column__input inputs'
+      id = 'logic-first-input'
+      value=''
+      onkeypress="logicOperatorsFirstInput(event)"
+            />) {</td>
+            <td id="first-logic-error"></td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Ваше число между 10 и 20 "</span>);</td>
+  </tr>
+   <tr>
+    <td>4</td>
+    <td>}</td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td><span class="code-example__tag">if</span>(  <input
+      type='text'
+      class='table-column__input inputs'
+      id = 'logic-second-input'
+      value='!(example<20 && example>10)'
+      onkeypress="logicOperatorsSecondInput(event)"
+            />){</td>
+            <td id="second-logic-error"></td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Ваше число не находится между 10 и 20 "</span>);</td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td>}</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><span class="code-example__tag">if</span>(  <input
+      type='text'
+      class='table-column__input inputs'
+      id = 'logic-third-input'
+      value=''
+      onkeypress="logicOperatorsThirdInput(event)"
+            />){</td>
+            <td id="third-logic-error"></td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td> <span class="code-example__tag">alert</span>(<span class="code-example__quotes">"Вы ввели 10 или 20 "</span>);</td>
+  </tr>
+   <tr>
+    <td>10</td>
+    <td>}</td>
+  </tr>
+   
+</pre>
+<a href="#code-example__logic-task" class="code-wrapper__link-exmple"  id="code-example__logic-task">Запустить</a>
 </table>
 
 
