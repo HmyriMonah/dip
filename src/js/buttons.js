@@ -165,6 +165,10 @@ function normalColor(id) {
   id.style.background = '#03bf47';
 }
 
+
+const taskImgDis = document.getElementById('task-img');
+
+
 const titleInput = document.getElementById('title-input');
 
 const titleError = document.getElementById('title-error');
@@ -200,26 +204,26 @@ function checkTitle(str, sign) {
   let closeTAg = inputString.substr(inputString.length - 8);
   console.log(closeTAg);
   console.log();
-  if(openTag=="<title>" && closeTAg=="</title>") {
-    let resStr=inputString.replace(openTag,'');
-    resStr=resStr.replace(closeTAg,'title изминен');
-    document.title=resStr;
-        return {
+  if (openTag == '<title>' && closeTAg == '</title>') {
+    let resStr = inputString.replace(openTag, '');
+    resStr = resStr.replace(closeTAg, 'title изминен');
+    document.title = resStr;
+    return {
       result: true,
       message: 'Верно',
     };
-  }else {
-    if(openTag!="<title>") {
-       return {
-      result: false,
-      message: 'У вас проблемы с открываюищим тегом',
-    };
-    }else {
-      if(closeTAg!="</title>") {
-         return {
-      result: false,
-      message: 'У вас проблемы с закрывающим тегом',
-    };
+  } else {
+    if (openTag != '<title>') {
+      return {
+        result: false,
+        message: 'У вас проблемы с открываюищим тегом',
+      };
+    } else {
+      if (closeTAg != '</title>') {
+        return {
+          result: false,
+          message: 'У вас проблемы с закрывающим тегом',
+        };
       }
     }
   }
@@ -243,7 +247,6 @@ function checkTitle(str, sign) {
       message: 'не верное кол-во скобок',
     };
   }
-
 }
 
 function titleInputTask(e) {
@@ -275,3 +278,116 @@ function titleInputTask(e) {
     }
   }
 }
+
+const imgInput = document.getElementById('img-input');
+
+const imgError = document.getElementById('img-error');
+
+const imgTask = document.getElementById('code-example__img-task');
+
+imgTask.onclick = function () {
+  console.log("что");
+  let firstInputString = imgInput.value;
+  firstInputString = firstInputString.replace(/\s+/g, '');
+
+  let checked = checkImg(firstInputString, '&');
+  if (checked.result === false) {
+    errorColor(imgInput);
+    imgError.innerHTML = checked.message;
+    taskImgDis.style.display = "none";
+  } else {
+    normalColor(imgInput);
+    imgError.innerHTML = '';
+    taskImgDis.style.display = "block";
+  }
+};
+
+function checkImg(str) {
+  let correctString = [];
+  let equalsCorrectCount;
+  let inputString = str;
+  if (str.length <= 1) {
+    return {
+      result: false,
+      message: 'Нужно что-то написать',
+    };
+  }
+  inputString= inputString.replace(/[\<\>]/g,'');
+  let openTag = inputString.substring(0, 27);
+  //let closeTAg = inputString.substr(inputString.length - 8);
+  console.log(openTag);
+  console.log('imgsrc="images/example.jpg"');
+  if (openTag == 'imgsrc="images/example.jpg\"' || openTag== 'imgsrc="images/example.jpg'  ) {
+    return {
+      result: true,
+      message: 'Верно',
+    };
+  }else {
+    if(inputString.substring(0, 7)=="imgsrc=") {
+       return {
+      result: false,
+      message: 'Ошибка в пути к файлу',
+    };
+    }
+     return {
+      result: false,
+      message: 'Ошибка',
+    };
+  }
+
+  let openBracketsCount = inputString.match(/[\<\?]/g);
+  if (openBracketsCount == null) {
+    openBracketsCount = 0;
+  } else {
+    openBracketsCount = inputString.match(/[\<\?]/g).length;
+  }
+  let closeBracketsCount = inputString.match(/[\>\?]/g);
+  if (closeBracketsCount == null) {
+    closeBracketsCount = 0;
+  } else {
+    closeBracketsCount = inputString.match(/[\>\?]/g).length;
+  }
+  if (openBracketsCount != closeBracketsCount) {
+    console.log(openBracketsCount);
+    console.log(closeBracketsCount);
+    return {
+      result: false,
+      message: 'не верное кол-во скобок',
+    };
+  }
+}
+
+function imgInputTask(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    let elem = e.srcElement || e.target;
+    let inputString = elem.value;
+    inputString = inputString.replace(/\s+/g, '');
+    let varible = inputString.substring(0, 7);
+    let openBracketsCount = inputString.match(/[\(\?\<]/g);
+    if (openBracketsCount == null) {
+      openBracketsCount = 0;
+    } else {
+      openBracketsCount = inputString.match(/[\(\?\<]/g).length;
+    }
+    let closeBracketsCount = inputString.match(/[\)\?\<]/g);
+    if (closeBracketsCount == null) {
+      closeBracketsCount = 0;
+    } else {
+      closeBracketsCount = inputString.match(/[\)\?\<]/g).length;
+    }
+    console.log(checkImg(inputString));
+    if (!checkImg(inputString).result) {
+      errorColor(imgInput);
+      imgError.innerHTML = checkImg(inputString).message;
+
+      taskImgDis.style.display = "none";
+    } else {
+      normalColor(imgInput);
+      imgError.innerHTML = '';
+      taskImgDis.style.display = "block";
+    }
+  }
+}
+
+

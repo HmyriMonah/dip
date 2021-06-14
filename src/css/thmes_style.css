@@ -8,6 +8,14 @@ p {
   font-size: 1.15em;
 }
 
+#task-img{
+ display: none;
+}
+
+.img-task-block {
+  display: block;
+}
+
 button {
    outline: 0;
    border-radius: 50px 50px 50px 50px;
@@ -361,3 +369,4 @@ a.previous, .next{
 .inputs{
   border-color: #f000;
 }
+
