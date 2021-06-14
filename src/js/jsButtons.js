@@ -5,6 +5,7 @@ const firstThemeOpenButton = document.getElementById('first-html-theme');
 const secondThemeOpenButton = document.getElementById('second-html-theme');
 const thirdThemeOpenButton = document.getElementById('third-html-theme');
 const fourthThemeOpenButton = document.getElementById('fourth-html-theme');
+const fifthThemeOpenButton = document.getElementById('fifth-html-theme');
 
 const formsList = document.getElementsByClassName('theory-form');
 
@@ -13,6 +14,8 @@ const firstTheme = document.getElementById('first-theme-form');
 const secondThemeForm = document.getElementById('second-theme-form');
 const thirdThemeForm = document.getElementById('third-theme-form');
 const fourthThemeForm = document.getElementById('fourth-theme-form');
+const fifthThemeForm = document.getElementById('fifth-theme-form');
+
 
 const content = document.getElementById('main-content');
 
@@ -35,6 +38,11 @@ listNext[2].onclick = function () {
   fourthThemeForm.classList.add('theory-form-flex');
 };
 
+listNext[3].onclick = function () {
+  fourthThemeForm.classList.remove('theory-form-flex');
+  fifthThemeForm.classList.add('theory-form-flex');
+};
+
 listPrevious[0].onclick = function () {
   secondThemeForm.classList.remove('theory-form-flex');
   firstTheme.classList.add('theory-form-flex');
@@ -48,6 +56,11 @@ listPrevious[1].onclick = function () {
 listPrevious[2].onclick = function () {
   fourthThemeForm.classList.remove('theory-form-flex');
   thirdThemeForm.classList.add('theory-form-flex');
+};
+
+listPrevious[3].onclick = function () {
+  fifthThemeForm.classList.remove('theory-form-flex');
+  fourthThemeForm.classList.add('theory-form-flex');
 };
 
 function closeForms() {
@@ -93,6 +106,12 @@ thirdThemeOpenButton.onclick = function () {
 //open fourth dorm
 fourthThemeOpenButton.onclick = function () {
   fourthThemeForm.classList.add('theory-form-flex');
+  document.body.className = 'darkBackGround';
+  content.className = 'content-hidden';
+};
+
+fifthThemeOpenButton.onclick = function () {
+  fifthThemeForm.classList.add('theory-form-flex');
   document.body.className = 'darkBackGround';
   content.className = 'content-hidden';
 };
