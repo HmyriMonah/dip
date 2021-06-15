@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-console.log('hello 1232321');
+
 
 //open form buttons
 const firstThemeOpenButton = document.getElementById('first-html-theme');
@@ -21,7 +21,7 @@ const fifthThemeForm = document.getElementById('fifth-theme-form');
 const sixthThemeForm = document.getElementById('sixth-theme-form');
 const seventhThemeForm = document.getElementById('seventh-theme-form');
 
-console.log(seventhThemeForm);
+
 
 const content = document.getElementById('main-content');
 
@@ -390,4 +390,117 @@ function imgInputTask(e) {
   }
 }
 
+const bTagButton = document.getElementById('code-example__tag-b');
 
+const tagBText = document.getElementById('tag-b-text');
+bTagButton.onclick = function () {
+  
+  if(tagBText.innerHTML=='&lt;<span class="code-example__tag">b</span>&gt; <b>Текст выделяется жирным</b> &lt;/<span class="code-example__tag">b</span>&gt;') {
+    tagBText.innerHTML = "Текст НЕ выделяется жирным";
+  }else {
+    tagBText.innerHTML = '&lt;<span class="code-example__tag">b</span>&gt; <b>Текст выделяется жирным</b> &lt;/<span class="code-example__tag">b</span>&gt;';
+  }
+  
+}
+
+
+const emTagButton = document.getElementById('code-example__tag-em');
+
+const tagEmText = document.getElementById('tag-em-text');
+emTagButton.onclick = function () {
+
+  if(tagEmText.innerHTML=='&lt;<span class="code-example__tag">em</span>&gt; <em>Наклонный текст</em> &lt;/<span class="code-example__tag">em</span>&gt;') {
+    tagEmText.innerHTML = "Текст НЕ наклонный";
+  }else {
+    tagEmText.innerHTML = '&lt;<span class="code-example__tag">em</span>&gt; <em>Наклонный текст</em> &lt;/<span class="code-example__tag">em</span>&gt;';
+  }
+  
+}
+
+const uTagButton = document.getElementById('code-example__tag-u');
+
+const tagUText = document.getElementById('tag-u-text');
+const strU=tagUText.innerHTML;
+uTagButton.onclick = function () {
+
+  if(tagUText.innerHTML==strU) {
+    tagUText.innerHTML = "Текст НЕ подчеркнут";
+  }else {
+    tagUText.innerHTML = strU;
+  }
+}
+
+const supTagButton = document.getElementById('code-example__tag-sup');
+
+const tagSupText = document.getElementById('tag-sup-text');
+const strSup=tagSupText.innerHTML;
+
+supTagButton.onclick = function () {
+
+  if(tagSupText.innerHTML==strSup) {
+    tagSupText.innerHTML = "Текст обычный";
+  }else {
+    tagSupText.innerHTML = strSup;
+  }
+  
+}
+
+const subTagButton = document.getElementById('code-example__tag-sub');
+
+const tagSubText = document.getElementById('tag-sub-text');
+const strSub=tagSubText.innerHTML;
+
+subTagButton.onclick = function () {
+
+  if(tagSubText.innerHTML==strSub) {
+    tagSubText.innerHTML = "Текст обычный";
+  }else {
+    tagSubText.innerHTML = strSub;
+  }
+  
+}
+
+const insTagButton = document.getElementById('code-example__tag-ins');
+
+const tagInsText = document.getElementById('tag-ins-text');
+const strIns=tagInsText.innerHTML;
+
+insTagButton.onclick = function () {
+
+  if(tagInsText.innerHTML==strIns) {
+    tagInsText.innerHTML = "Текст обычный";
+  }else {
+    tagInsText.innerHTML = strIns;
+  }
+  
+}
+
+const delTagButton = document.getElementById('code-example__tag-del');
+
+const tagDelText = document.getElementById('tag-del-text');
+const strDel=tagDelText.innerHTML;
+
+delTagButton.onclick = function () {
+
+  if(tagDelText.innerHTML==strDel) {
+    tagDelText.innerHTML = "Текст обычный";
+  }else {
+    tagDelText.innerHTML = strDel;
+  }
+  
+}
+
+const preTagButton = document.getElementById('code-example__tag-pre');
+
+const tagPreText = document.getElementById('tag-pre-text');
+const strPre=tagPreText.innerHTML;
+
+preTagButton.onclick = function () {
+
+  if(tagPreText.innerHTML==strPre) {
+    tagPreText.innerHTML = "Неотформатированный текст";
+  }else {
+    tagPreText.innerHTML = strPre;
+  }
+  
+}
